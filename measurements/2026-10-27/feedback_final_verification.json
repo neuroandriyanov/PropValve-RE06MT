@@ -1,0 +1,149 @@
+[
+  {
+    "input": 0,
+    "target_amps": 0,
+    "meter_amps": 0.0,
+    "feedback_norm": 0.0009399652481079102,
+    "feedback_amps": 0.0028198957443237305,
+    "feedback_error_amps": 0.0028198957443237305,
+    "command_error_amps": 0.0,
+    "feedback_std_amps": 0.0011972479966271344,
+    "meter_samples": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  {
+    "input": 0.125,
+    "target_amps": 0.375,
+    "meter_amps": 0.3675,
+    "feedback_norm": 0.12321105599403381,
+    "feedback_amps": 0.36963316798210144,
+    "feedback_error_amps": 0.002133167982101447,
+    "command_error_amps": -0.007500000000000007,
+    "feedback_std_amps": 0.0005227564273360544,
+    "meter_samples": [
+      0.365,
+      0.365,
+      0.366,
+      0.366,
+      0.367,
+      0.367,
+      0.367,
+      0.367,
+      0.367
+    ]
+  },
+  {
+    "input": 0.25,
+    "target_amps": 0.75,
+    "meter_amps": 0.7475,
+    "feedback_norm": 0.24925503134727478,
+    "feedback_amps": 0.7477650940418243,
+    "feedback_error_amps": 0.00026509404182428753,
+    "command_error_amps": -0.0024999999999999467,
+    "feedback_std_amps": 0.0004528263413653196,
+    "meter_samples": [
+      0.746,
+      0.746,
+      0.746,
+      0.746,
+      0.746,
+      0.746,
+      0.747,
+      0.747,
+      0.747
+    ]
+  },
+  {
+    "input": 0.5,
+    "target_amps": 1.5,
+    "meter_amps": 1.4995,
+    "feedback_norm": 0.49948951601982117,
+    "feedback_amps": 1.4984685480594635,
+    "feedback_error_amps": -0.001031451940536554,
+    "command_error_amps": -0.0004999999999999449,
+    "feedback_std_amps": 0.000974565480353703,
+    "meter_samples": [
+      1.495,
+      1.495,
+      1.495,
+      1.495,
+      1.496,
+      1.497,
+      1.497,
+      1.497,
+      1.498
+    ]
+  },
+  {
+    "input": 0.75,
+    "target_amps": 2.25,
+    "meter_amps": 2.2510000000000003,
+    "feedback_norm": 0.7506798505783081,
+    "feedback_amps": 2.2520395517349243,
+    "feedback_error_amps": 0.0010395517349239825,
+    "command_error_amps": 0.001000000000000334,
+    "feedback_std_amps": 0.0009315689734015225,
+    "meter_samples": [
+      2.246,
+      2.246,
+      2.246,
+      2.247,
+      2.247,
+      2.248,
+      2.248,
+      2.249,
+      2.249
+    ]
+  },
+  {
+    "input": 1,
+    "target_amps": 3,
+    "meter_amps": 2.998,
+    "feedback_norm": 0.9999980926513672,
+    "feedback_amps": 2.9999942779541016,
+    "feedback_error_amps": 0.0019942779541013422,
+    "command_error_amps": -0.0019999999999997797,
+    "feedback_std_amps": 0.0,
+    "meter_samples": [
+      2.992,
+      2.992,
+      2.992,
+      2.993,
+      2.993,
+      2.994,
+      2.994,
+      2.995,
+      2.996
+    ]
+  },
+  {
+    "input": 0,
+    "target_amps": 0,
+    "meter_amps": 0.0,
+    "feedback_norm": 0,
+    "feedback_amps": 0,
+    "feedback_error_amps": 0.0,
+    "command_error_amps": 0.0,
+    "feedback_std_amps": 0.0,
+    "meter_samples": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ]
+  }
+]

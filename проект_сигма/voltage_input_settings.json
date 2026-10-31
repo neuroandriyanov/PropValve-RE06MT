@@ -1,0 +1,24 @@
+{
+  "R42_ohms": 10000,
+  "sample_rate_hz": 96000,
+  "filter_hz": 20,
+  "table": {
+    "min": -1.0,
+    "max": 1.0,
+    "coefficients": [
+      -1.2791438818551657,
+      -0.62618451983039,
+      0.02677484219438531,
+      0.6762541060654503,
+      1.3251072419904226
+    ]
+  },
+  "normalized_output_limits": [
+    0,
+    1
+  ],
+  "readback": "VIN_MEAS_0_1",
+  "volts_per_normalized_unit": 10,
+  "max_observed_difference_from_meter_volts": 0.0013260374069212766,
+  "EEPROM_written": false
+}

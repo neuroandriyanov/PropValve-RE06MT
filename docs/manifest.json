@@ -1,0 +1,1041 @@
+{
+  "format_version": 1,
+  "package_revision": 3,
+  "packaged_date": "2026-10-31",
+  "calibration_data_date": "2026-10-27",
+  "hardware_status_reported_date": "2026-10-31",
+  "hardware_status_source": "Author message: board works on the machine, passed testing, no observed board heating. Test dates and numerical temperatures were not specified.",
+  "previous_manifest_sha256": "3364eab003f7ebde0ae53c34e9d55539db569dd1ecba10a89b6c11642ac28457",
+  "revision_notes": {
+    "documentation": "Added private repository link and updated publication information. Hardware, DSP projects, tools, calibration and measurements unchanged."
+  },
+  "description": "Private repository package revision 3; manifest excludes itself. Original working folder remains unchanged.",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 278,
+      "sha256": "15928a07732a0685fb896f63f9b8b2954786c390d3b4d6b48c706bf2d3e11f72"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 336,
+      "sha256": "143b15ec67aa482f84444b3c15111c34db842d6e331d88bf9f5d16e8995534a0"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 12556,
+      "sha256": "7e1536d2899ba4bc42adec51234c3dfda32dfc4d1f10c5633dfa5657239e8f2c"
+    },
+    {
+      "path": "archive/eeprom-unverified/E2Prom.bin",
+      "bytes": 1152,
+      "sha256": "c51a68edf80bfe88523c4e14e47f95ca0462a8d8ff6c79dc0666cc2b0dcaace1",
+      "source": "проект_сигма/Design1_parker_v0_IC 2/E2Prom.bin",
+      "source_sha256": "c51a68edf80bfe88523c4e14e47f95ca0462a8d8ff6c79dc0666cc2b0dcaace1",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/eeprom-unverified/E2Prom.Hex",
+      "bytes": 8208,
+      "sha256": "9a505621cf2762dce7d1f7a466ed1c829bcb7159ead55fc7e3ad3ee6860af215",
+      "source": "проект_сигма/Design1_parker_v0_IC 2/E2Prom.Hex",
+      "source_sha256": "9a505621cf2762dce7d1f7a466ed1c829bcb7159ead55fc7e3ad3ee6860af215",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/inspect_vendor.py",
+      "bytes": 2543,
+      "sha256": "d4a135084d22dd9630b0d85e681ac3b21f3abb5c01b74e10812109b7f640ca1f",
+      "source": "tools/meter/inspect_vendor.py",
+      "source_sha256": "d4a135084d22dd9630b0d85e681ac3b21f3abb5c01b74e10812109b7f640ca1f",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/meter.ps1",
+      "bytes": 405,
+      "sha256": "b9b20154fbe291b1a14b5affc40f35c53397125c9e0d87be8f165a3f283f6065",
+      "source": "tools/meter/meter.ps1",
+      "source_sha256": "b9b20154fbe291b1a14b5affc40f35c53397125c9e0d87be8f165a3f283f6065",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/protocol.py",
+      "bytes": 4877,
+      "sha256": "19bcdc5fad960a88b40cc5d896f18c47d84fb306fe3fdefcaf791f95fe6b3ffe",
+      "source": "tools/meter/protocol.py",
+      "source_sha256": "19bcdc5fad960a88b40cc5d896f18c47d84fb306fe3fdefcaf791f95fe6b3ffe",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/read_meter.py",
+      "bytes": 6707,
+      "sha256": "768aec6be2b7815a0bd7fd1a74bf7ea9fdd40f02429aa70bbb6d27dbf9d2cad7",
+      "source": "tools/meter/read_meter.py",
+      "source_sha256": "768aec6be2b7815a0bd7fd1a74bf7ea9fdd40f02429aa70bbb6d27dbf9d2cad7",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/test_protocol.py",
+      "bytes": 3785,
+      "sha256": "aef210a7f62dcd263581f99b1c88ebe8dba9452fd75ee9be521bcaaa120049fe",
+      "source": "tools/meter/test_protocol.py",
+      "source_sha256": "aef210a7f62dcd263581f99b1c88ebe8dba9452fd75ee9be521bcaaa120049fe",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/win_hid.py",
+      "bytes": 6707,
+      "sha256": "529392a69d071a5daa36bb7d7cd69d4a8ad22356ad817d808188693815c50c8a",
+      "source": "tools/meter/win_hid.py",
+      "source_sha256": "529392a69d071a5daa36bb7d7cd69d4a8ad22356ad817d808188693815c50c8a",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/meter/ИНСТРУКЦИЯ.txt",
+      "bytes": 6116,
+      "sha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "source": "tools/meter/ИНСТРУКЦИЯ.txt",
+      "source_sha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/build_voltage_input.py",
+      "bytes": 1133,
+      "sha256": "79cf9be0840ed237eedb1c8f93b99f2df1c8447d86d0369b658e68c262659d01",
+      "source": "tools/sigma/build_voltage_input.py",
+      "source_sha256": "79cf9be0840ed237eedb1c8f93b99f2df1c8447d86d0369b658e68c262659d01",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/calibrate_current.py",
+      "bytes": 2285,
+      "sha256": "48923f4914722e7d4b8a25875fbb699c0a925e36e26fc8ac2916fb12521b1a55",
+      "source": "tools/sigma/calibrate_current.py",
+      "source_sha256": "48923f4914722e7d4b8a25875fbb699c0a925e36e26fc8ac2916fb12521b1a55",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/capture_node.py",
+      "bytes": 811,
+      "sha256": "0d39112d4b250c2d9b9e5c9bc8ed7e2ab99a74b16f6859fb86c71a92472c3aaf",
+      "source": "tools/sigma/capture_node.py",
+      "source_sha256": "0d39112d4b250c2d9b9e5c9bc8ed7e2ab99a74b16f6859fb86c71a92472c3aaf",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/capture_sigma.py",
+      "bytes": 1645,
+      "sha256": "68565b7646de9d3ce34c0f5479dbfe36f2c4a6af6100dc6575d0c105a01458d3",
+      "source": "tools/sigma/capture_sigma.py",
+      "source_sha256": "68565b7646de9d3ce34c0f5479dbfe36f2c4a6af6100dc6575d0c105a01458d3",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/connect_voltage_input.py",
+      "bytes": 1059,
+      "sha256": "2696c4f11e51844c32027e6ae0722063149c977d4b2c4bfb4044ca89d564c00e",
+      "source": "tools/sigma/connect_voltage_input.py",
+      "source_sha256": "2696c4f11e51844c32027e6ae0722063149c977d4b2c4bfb4044ca89d564c00e",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/finalize_current.py",
+      "bytes": 3938,
+      "sha256": "5e5a3bf6d2a5d70156c730a75115e24d87cae68105b10033de1495a9f96e41fc",
+      "source": "tools/sigma/finalize_current.py",
+      "source_sha256": "5e5a3bf6d2a5d70156c730a75115e24d87cae68105b10033de1495a9f96e41fc",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/finalize_feedback.py",
+      "bytes": 6397,
+      "sha256": "8bacd018898895202452737cbd455bf3758d732541e85e7d668b2fdb30921ea9",
+      "source": "tools/sigma/finalize_feedback.py",
+      "source_sha256": "8bacd018898895202452737cbd455bf3758d732541e85e7d668b2fdb30921ea9",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/finalize_voltage_input.py",
+      "bytes": 6726,
+      "sha256": "e83177a652aad25e41a2faa5569c09cc99d81411b880dcb699a7187b8a94140f",
+      "source": "tools/sigma/finalize_voltage_input.py",
+      "source_sha256": "e83177a652aad25e41a2faa5569c09cc99d81411b880dcb699a7187b8a94140f",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/finish_zero_gate.py",
+      "bytes": 389,
+      "sha256": "2c98390eb80d16bdaf144b7488e0a9989e42c549be6f0aa0c6634cc8812748bd",
+      "source": "tools/sigma/finish_zero_gate.py",
+      "source_sha256": "2c98390eb80d16bdaf144b7488e0a9989e42c549be6f0aa0c6634cc8812748bd",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/fit_feedback.py",
+      "bytes": 1325,
+      "sha256": "566f6bf458da55d711ce4679343d5a47388534f807ed5b30faf4ed7de7ec76b1",
+      "source": "tools/sigma/fit_feedback.py",
+      "source_sha256": "566f6bf458da55d711ce4679343d5a47388534f807ed5b30faf4ed7de7ec76b1",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/fit_voltage_input.py",
+      "bytes": 1569,
+      "sha256": "edb06b5833b9e448f6a42e7dac598d320ab2aa86cabf5ae3c714b53a9a938782",
+      "source": "tools/sigma/fit_voltage_input.py",
+      "source_sha256": "edb06b5833b9e448f6a42e7dac598d320ab2aa86cabf5ae3c714b53a9a938782",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/inspect_cells.py",
+      "bytes": 352,
+      "sha256": "0e59f8b859969428a5a57fb7c150fb2e4d9edb1981dfd8e48ddbb8c3effbae64",
+      "source": "tools/sigma/inspect_cells.py",
+      "source_sha256": "0e59f8b859969428a5a57fb7c150fb2e4d9edb1981dfd8e48ddbb8c3effbae64",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/inspect_server.ps1",
+      "bytes": 422,
+      "sha256": "0f0a05ae82cab0e525b7ce066ef127535007954d07d0d17dfe299f1221c5c8da",
+      "source": "tools/sigma/inspect_server.ps1",
+      "source_sha256": "0f0a05ae82cab0e525b7ce066ef127535007954d07d0d17dfe299f1221c5c8da",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/install_current.py",
+      "bytes": 1164,
+      "sha256": "85e90a0069a13d7c78c67e6b487af5874d84470e12fc20038036f5c799222900",
+      "source": "tools/sigma/install_current.py",
+      "source_sha256": "85e90a0069a13d7c78c67e6b487af5874d84470e12fc20038036f5c799222900",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/install_feedback.py",
+      "bytes": 694,
+      "sha256": "bfb155b6b57db3170319840783badc06d2f51b8bc268adc29209f6a87c1a7b4a",
+      "source": "tools/sigma/install_feedback.py",
+      "source_sha256": "bfb155b6b57db3170319840783badc06d2f51b8bc268adc29209f6a87c1a7b4a",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/install_feedback_limits.py",
+      "bytes": 624,
+      "sha256": "03de746e7f4fcf55cb815139e4164f942bf0a12da518bd36638d3d8aaf3df53a",
+      "source": "tools/sigma/install_feedback_limits.py",
+      "source_sha256": "03de746e7f4fcf55cb815139e4164f942bf0a12da518bd36638d3d8aaf3df53a",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/install_zero_gate.py",
+      "bytes": 698,
+      "sha256": "f2e1e0c15ba79016b1a65c2ff0f9cccdeac0776558ff7d226aa710d819e7fae9",
+      "source": "tools/sigma/install_zero_gate.py",
+      "source_sha256": "f2e1e0c15ba79016b1a65c2ff0f9cccdeac0776558ff7d226aa710d819e7fae9",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/list_controls.py",
+      "bytes": 670,
+      "sha256": "55a567d7591002fea03586dc2303e392b011b3338ebf53554ed09990958b037d",
+      "source": "tools/sigma/list_controls.py",
+      "source_sha256": "55a567d7591002fea03586dc2303e392b011b3338ebf53554ed09990958b037d",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/list_project.py",
+      "bytes": 347,
+      "sha256": "36520ff629397e935747937986dc130fa57b193efed1e9879f8ae2d0b578c2a3",
+      "source": "tools/sigma/list_project.py",
+      "source_sha256": "36520ff629397e935747937986dc130fa57b193efed1e9879f8ae2d0b578c2a3",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/measure_current.py",
+      "bytes": 1345,
+      "sha256": "fe5d3ec9c6394debd35ee98b43e83ae62ff0935108a7df8b66cca0a3fee4f5b8",
+      "source": "tools/sigma/measure_current.py",
+      "source_sha256": "fe5d3ec9c6394debd35ee98b43e83ae62ff0935108a7df8b66cca0a3fee4f5b8",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/measure_feedback.py",
+      "bytes": 2320,
+      "sha256": "22e3a20c328eaccbf65e470bdee891fdaf8d5ddbed44bc42ea02b98c9d6918d0",
+      "source": "tools/sigma/measure_feedback.py",
+      "source_sha256": "22e3a20c328eaccbf65e470bdee891fdaf8d5ddbed44bc42ea02b98c9d6918d0",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/measure_voltage_input.py",
+      "bytes": 2005,
+      "sha256": "621238bfa8e83db99e8a9cf9e206334987cad9ce6716f3a3b7579ec614f1cb43",
+      "source": "tools/sigma/measure_voltage_input.py",
+      "source_sha256": "621238bfa8e83db99e8a9cf9e206334987cad9ce6716f3a3b7579ec614f1cb43",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/nrbf_project.py",
+      "bytes": 7162,
+      "sha256": "5aa21cc6d393cb1cccd97dc934a3dd1ebe4a25436c1cbb4664747e5798af263c",
+      "source": "tools/sigma/nrbf_project.py",
+      "source_sha256": "5aa21cc6d393cb1cccd97dc934a3dd1ebe4a25436c1cbb4664747e5798af263c",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/patch_table.py",
+      "bytes": 2343,
+      "sha256": "ac08d1a9036420503427e76fcf171b8060c45281e89ebce0e2205344a7628aa4",
+      "source": "tools/sigma/patch_table.py",
+      "source_sha256": "ac08d1a9036420503427e76fcf171b8060c45281e89ebce0e2205344a7628aa4",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/point_sigma.py",
+      "bytes": 3639,
+      "sha256": "ab84dbe92a8c47c72070b2875fc5bb28b3e165a7582ee0ef4851b9c7947edc42",
+      "source": "tools/sigma/point_sigma.py",
+      "source_sha256": "ab84dbe92a8c47c72070b2875fc5bb28b3e165a7582ee0ef4851b9c7947edc42",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/refine_feedback.py",
+      "bytes": 1311,
+      "sha256": "eb2a5e0dea4512a549b9a7576a7d7cb46ca5788b182b9205b1dd52ea12de3995",
+      "source": "tools/sigma/refine_feedback.py",
+      "source_sha256": "eb2a5e0dea4512a549b9a7576a7d7cb46ca5788b182b9205b1dd52ea12de3995",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/sigma_api.py",
+      "bytes": 1015,
+      "sha256": "77c8452053339e5a1c20d434f393d9e2306ab369ec04566801416cd0a2f48b76",
+      "source": "tools/sigma/sigma_api.py",
+      "source_sha256": "77c8452053339e5a1c20d434f393d9e2306ab369ec04566801416cd0a2f48b76",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/SigmaBridge.cs",
+      "bytes": 4738,
+      "sha256": "996f6e770d2920f5d6d41a539108df0c641be48fdac8ceb3df98c70fa5a190b6",
+      "source": "tools/sigma/SigmaBridge.cs",
+      "source_sha256": "996f6e770d2920f5d6d41a539108df0c641be48fdac8ceb3df98c70fa5a190b6",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/verify_current.py",
+      "bytes": 1320,
+      "sha256": "ec6aa0949feb34ec96b9eeae0cb05d5e71841bef4065dcfc7c47c59604dd8407",
+      "source": "tools/sigma/verify_current.py",
+      "source_sha256": "ec6aa0949feb34ec96b9eeae0cb05d5e71841bef4065dcfc7c47c59604dd8407",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/verify_feedback.py",
+      "bytes": 2099,
+      "sha256": "0dccc22f815826c86ec9ecb5261137504c890fe9d957719a20e1c3c9585f997e",
+      "source": "tools/sigma/verify_feedback.py",
+      "source_sha256": "0dccc22f815826c86ec9ecb5261137504c890fe9d957719a20e1c3c9585f997e",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/verify_output.py",
+      "bytes": 3851,
+      "sha256": "05559397fc61c5ec8314e88e3533a76fc6cd2af9a74038930c0334b426d7430e",
+      "source": "tools/sigma/verify_output.py",
+      "source_sha256": "05559397fc61c5ec8314e88e3533a76fc6cd2af9a74038930c0334b426d7430e",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/legacy-tools/sigma/win32_sigma.py",
+      "bytes": 8104,
+      "sha256": "182fa92357c14a05c54b3a3c90f7c43f9bcf604b508d457d2e7bc5d9b07ff932",
+      "source": "tools/sigma/win32_sigma.py",
+      "source_sha256": "182fa92357c14a05c54b3a3c90f7c43f9bcf604b508d457d2e7bc5d9b07ff932",
+      "modified_for_package": false
+    },
+    {
+      "path": "archive/README.md",
+      "bytes": 2093,
+      "sha256": "0ce1b8abe3c4f687d4a7d912f4320de2c8cdd1c1f87cf80b477403c093212aab"
+    },
+    {
+      "path": "archive/НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.txt",
+      "bytes": 36479,
+      "sha256": "343f8a6559e3bd4985a33ef7007dd29961ae477596602f2194bb498cdbcbf1de",
+      "source": "НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.txt",
+      "source_sha256": "343f8a6559e3bd4985a33ef7007dd29961ae477596602f2194bb498cdbcbf1de",
+      "modified_for_package": false
+    },
+    {
+      "path": "doc/Parker-Series-RE06MT.pdf",
+      "bytes": 560189,
+      "sha256": "8cbb377451da21909d63689f54c33d6362b146699648b25f9c477c8a6d881615",
+      "source": "doc/Parker-Series-RE06MT.pdf",
+      "source_sha256": "8cbb377451da21909d63689f54c33d6362b146699648b25f9c477c8a6d881615",
+      "modified_for_package": false
+    },
+    {
+      "path": "docs/INVENTORY.md",
+      "bytes": 8806,
+      "sha256": "61ffc4eda2590598a2bfa9c1aeb0016b0f383100c6d2bd53c3ec47c2a64e4492"
+    },
+    {
+      "path": "docs/SETUP.md",
+      "bytes": 9962,
+      "sha256": "740999c0c3020043b3b85e988bc563afe4f282f16baf5cf1559fab9606984b95"
+    },
+    {
+      "path": "docs/STATUS.md",
+      "bytes": 10504,
+      "sha256": "7ca0bd30d399142553bc7d6540cc2e9f9d42afc0c41f390b0b56089ca8fc5d33"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 4583,
+      "sha256": "b3f4f39c0c59f822b22e797bcb7a663d4fae794d6891154eb3b1ec60c209d793"
+    },
+    {
+      "path": "measurements/2026-10-27/calibration_final.jsonl",
+      "bytes": 7486,
+      "sha256": "2e445cadea31989b6e6d6321c7cdd7a53a40d0992dfe97bdaa4edbd4f8e6b319",
+      "source": "output/meter/calibration_final.jsonl",
+      "source_sha256": "2e445cadea31989b6e6d6321c7cdd7a53a40d0992dfe97bdaa4edbd4f8e6b319",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/calibration_initial.jsonl",
+      "bytes": 9361,
+      "sha256": "1c609f11ef0dd219e96e7eecf69820bf34b39cd8f94946fcb7ad0221fcda1a96",
+      "source": "output/meter/calibration_initial.jsonl",
+      "source_sha256": "1c609f11ef0dd219e96e7eecf69820bf34b39cd8f94946fcb7ad0221fcda1a96",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/current_calibration_points.json",
+      "bytes": 1240,
+      "sha256": "1fe7b2fceee494a5648e626238e677a4b1cce8c831f7bf7c495a0e71ca75e088",
+      "source": "output/meter/current_calibration_points.json",
+      "source_sha256": "1fe7b2fceee494a5648e626238e677a4b1cce8c831f7bf7c495a0e71ca75e088",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/current_initial.json",
+      "bytes": 1377,
+      "sha256": "9eb55ce301b0a93467b8ff63aa9250d07b1521cc0eed80da314157c79e4e8c77",
+      "source": "output/meter/current_initial.json",
+      "source_sha256": "9eb55ce301b0a93467b8ff63aa9250d07b1521cc0eed80da314157c79e4e8c77",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/current_verification.json",
+      "bytes": 2323,
+      "sha256": "68ba1905527d8bb56abd6a122f6df1decbfdff23d6a0b59204a9758a474e71d1",
+      "source": "output/meter/current_verification.json",
+      "source_sha256": "68ba1905527d8bb56abd6a122f6df1decbfdff23d6a0b59204a9758a474e71d1",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_calibration.json",
+      "bytes": 779,
+      "sha256": "87eae037db5eedfc06edcc3885a9c14a695efa16cc68abe4108838dead0816a3",
+      "source": "output/meter/feedback_calibration.json",
+      "source_sha256": "87eae037db5eedfc06edcc3885a9c14a695efa16cc68abe4108838dead0816a3",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_final_verification.json",
+      "bytes": 3159,
+      "sha256": "3709c0d00955d5dc07bdce1280aab21b43c97f37a62855489d3f84a440886cbb",
+      "source": "output/meter/feedback_final_verification.json",
+      "source_sha256": "3709c0d00955d5dc07bdce1280aab21b43c97f37a62855489d3f84a440886cbb",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_r43_10k_filtered.json",
+      "bytes": 23899,
+      "sha256": "8661273579a7b806776ad614092a54f727a2a85561cc66ac08c8a5e73c94924c",
+      "source": "output/meter/feedback_r43_10k_filtered.json",
+      "source_sha256": "8661273579a7b806776ad614092a54f727a2a85561cc66ac08c8a5e73c94924c",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_r43_10k_measurements.json",
+      "bytes": 39711,
+      "sha256": "bd4887a80d9df9cd2aa3c640469b7bc7479038644b903578f1e09784990c1daa",
+      "source": "output/meter/feedback_r43_10k_measurements.json",
+      "source_sha256": "bd4887a80d9df9cd2aa3c640469b7bc7479038644b903578f1e09784990c1daa",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_verification_before_refinement.json",
+      "bytes": 3248,
+      "sha256": "1b9bf07a06bb9e705b7c4cdf1390105ae63195bc502d4d1c937ef360a4804e84",
+      "source": "output/meter/feedback_verification_before_refinement.json",
+      "source_sha256": "1b9bf07a06bb9e705b7c4cdf1390105ae63195bc502d4d1c937ef360a4804e84",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/feedback_verification_without_limits.json",
+      "bytes": 3179,
+      "sha256": "9364d047f0672ec7f6beae5aa88850d8b5dfb713af7556c4c2f208af4b3662b7",
+      "source": "output/meter/feedback_verification_without_limits.json",
+      "source_sha256": "9364d047f0672ec7f6beae5aa88850d8b5dfb713af7556c4c2f208af4b3662b7",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/output_calibration_verification.json",
+      "bytes": 33289,
+      "sha256": "c9520daf0e04c4d5965fabe626cc1583d57861bbadd42c0e6cb0cb42b0284272",
+      "source": "output/meter/output_calibration_verification.json",
+      "source_sha256": "c9520daf0e04c4d5965fabe626cc1583d57861bbadd42c0e6cb0cb42b0284272",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/readings.jsonl",
+      "bytes": 6223,
+      "sha256": "ca0726660fdd7b7b3724a3cfa7129cf9c50b4fa7c48000d164c674a802601f56",
+      "source": "output/meter/readings.jsonl",
+      "source_sha256": "ca0726660fdd7b7b3724a3cfa7129cf9c50b4fa7c48000d164c674a802601f56",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/voltage_input_calibration.json",
+      "bytes": 738,
+      "sha256": "eb53046c9549d7aff5e681a9b30678c38da8156d3563c565a68d565c8079da06",
+      "source": "output/meter/voltage_input_calibration.json",
+      "source_sha256": "eb53046c9549d7aff5e681a9b30678c38da8156d3563c565a68d565c8079da06",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/voltage_input_filtered.json",
+      "bytes": 23369,
+      "sha256": "749005cf9ee6e2658b5a8bcd59eec7857a6016c5d79daa58b60ab08b7aeda549",
+      "source": "output/meter/voltage_input_filtered.json",
+      "source_sha256": "749005cf9ee6e2658b5a8bcd59eec7857a6016c5d79daa58b60ab08b7aeda549",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/voltage_input_raw.json",
+      "bytes": 10701,
+      "sha256": "32814a4be67c5103dcc023d307de28bdf47bc18414c58333b1bc9217c33b4a61",
+      "source": "output/meter/voltage_input_raw.json",
+      "source_sha256": "32814a4be67c5103dcc023d307de28bdf47bc18414c58333b1bc9217c33b4a61",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/2026-10-27/voltage_input_verify.json",
+      "bytes": 23822,
+      "sha256": "eee10a35a87e842bbbe4aa524ca5a7b6594c2026bf1f2bf1a77166fd103175f9",
+      "source": "output/meter/voltage_input_verify.json",
+      "source_sha256": "eee10a35a87e842bbbe4aa524ca5a7b6594c2026bf1f2bf1a77166fd103175f9",
+      "modified_for_package": false
+    },
+    {
+      "path": "measurements/README.md",
+      "bytes": 1602,
+      "sha256": "6f88ada146757d084a6579b84ab1b1eefce2d656c8bf86681af8617a9b6964ba"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 1894,
+      "sha256": "e6d705e47ab20081f921dc5ca6b3afcc0893e99c35c3e39e6791b92fc68b4918"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9115,
+      "sha256": "5748453c13c42f9193f354c0dff0bb824c1471074ed17f216504b74bd1999554"
+    },
+    {
+      "path": "tools/check_project.py",
+      "bytes": 3891,
+      "sha256": "79f5d3975f42efaab3c5d5364090f075944fbc329c49aee2fc0a7db7386767a3"
+    },
+    {
+      "path": "tools/meter/meter.ps1",
+      "bytes": 524,
+      "sha256": "011537a639e2eda4889a3ec22dc88f6a3479c169c7cfa38c63dbc587645615c7",
+      "source": "tools/meter/meter.ps1",
+      "source_sha256": "b9b20154fbe291b1a14b5affc40f35c53397125c9e0d87be8f165a3f283f6065",
+      "modified_for_package": true
+    },
+    {
+      "path": "tools/meter/protocol.py",
+      "bytes": 4877,
+      "sha256": "19bcdc5fad960a88b40cc5d896f18c47d84fb306fe3fdefcaf791f95fe6b3ffe",
+      "source": "tools/meter/protocol.py",
+      "source_sha256": "19bcdc5fad960a88b40cc5d896f18c47d84fb306fe3fdefcaf791f95fe6b3ffe",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/meter/read_meter.py",
+      "bytes": 6707,
+      "sha256": "768aec6be2b7815a0bd7fd1a74bf7ea9fdd40f02429aa70bbb6d27dbf9d2cad7",
+      "source": "tools/meter/read_meter.py",
+      "source_sha256": "768aec6be2b7815a0bd7fd1a74bf7ea9fdd40f02429aa70bbb6d27dbf9d2cad7",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/meter/test_protocol.py",
+      "bytes": 3785,
+      "sha256": "aef210a7f62dcd263581f99b1c88ebe8dba9452fd75ee9be521bcaaa120049fe",
+      "source": "tools/meter/test_protocol.py",
+      "source_sha256": "aef210a7f62dcd263581f99b1c88ebe8dba9452fd75ee9be521bcaaa120049fe",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/meter/win_hid.py",
+      "bytes": 6707,
+      "sha256": "529392a69d071a5daa36bb7d7cd69d4a8ad22356ad817d808188693815c50c8a",
+      "source": "tools/meter/win_hid.py",
+      "source_sha256": "529392a69d071a5daa36bb7d7cd69d4a8ad22356ad817d808188693815c50c8a",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/meter/ИНСТРУКЦИЯ.txt",
+      "bytes": 6116,
+      "sha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "source": "tools/meter/ИНСТРУКЦИЯ.txt",
+      "source_sha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/sigma/build_bridge.ps1",
+      "bytes": 968,
+      "sha256": "a41969131a643fb9f14b7741e132c6d98b127c5751af5058d07502497accff9d"
+    },
+    {
+      "path": "tools/sigma/capture_node.py",
+      "bytes": 1300,
+      "sha256": "32d14178d65051b3639ed216633e2653850e3aa74ea8ad5582b3b4d4d91a5514",
+      "source": "tools/sigma/capture_node.py",
+      "source_sha256": "0d39112d4b250c2d9b9e5c9bc8ed7e2ab99a74b16f6859fb86c71a92472c3aaf",
+      "modified_for_package": true
+    },
+    {
+      "path": "tools/sigma/inspect_project.py",
+      "bytes": 1704,
+      "sha256": "7bec52e449304faa16027f36dff164f59f61f1abf9444a20c4bdd5789df01505"
+    },
+    {
+      "path": "tools/sigma/nrbf_project.py",
+      "bytes": 7162,
+      "sha256": "5aa21cc6d393cb1cccd97dc934a3dd1ebe4a25436c1cbb4664747e5798af263c",
+      "source": "tools/sigma/nrbf_project.py",
+      "source_sha256": "5aa21cc6d393cb1cccd97dc934a3dd1ebe4a25436c1cbb4664747e5798af263c",
+      "modified_for_package": false
+    },
+    {
+      "path": "tools/sigma/sigma_api.py",
+      "bytes": 1746,
+      "sha256": "2810f37b829eb3b573d8fd83a0e36585a448bbb90ecf4a56e8d7ea8c25b9ab96",
+      "source": "tools/sigma/sigma_api.py",
+      "source_sha256": "77c8452053339e5a1c20d434f393d9e2306ab369ec04566801416cd0a2f48b76",
+      "modified_for_package": true
+    },
+    {
+      "path": "tools/sigma/SigmaBridge.cs",
+      "bytes": 5665,
+      "sha256": "6c2a25f5d7af3517f13d7bee6d4d24bfc84955e4c24c93054d1e4e0818b56409",
+      "source": "tools/sigma/SigmaBridge.cs",
+      "source_sha256": "996f6e770d2920f5d6d41a539108df0c641be48fdac8ceb3df98c70fa5a190b6",
+      "modified_for_package": true
+    },
+    {
+      "path": "корпус/d.lxcf",
+      "bytes": 313,
+      "sha256": "d436a610bf100460bd46b023ea25a6a5c750e1fc8b16dff14b924f9848971a69",
+      "source": "корпус/d.lxcf",
+      "source_sha256": "d436a610bf100460bd46b023ea25a6a5c750e1fc8b16dff14b924f9848971a69",
+      "modified_for_package": false
+    },
+    {
+      "path": "корпус/README.md",
+      "bytes": 1310,
+      "sha256": "f3217ce52de79705b16ae24500518ec6aeb8835a79a7ea6b9cc881ebca29ac6d"
+    },
+    {
+      "path": "корпус/RUICHI A09.jpg",
+      "bytes": 78615,
+      "sha256": "26cf1f2accee3e022383eb1486e60a2181522b87c0e3557620053cb606d67f22",
+      "source": "корпус/RUICHI A09.jpg",
+      "source_sha256": "26cf1f2accee3e022383eb1486e60a2181522b87c0e3557620053cb606d67f22",
+      "modified_for_package": false
+    },
+    {
+      "path": "корпус/заглушка.m3d",
+      "bytes": 269847,
+      "sha256": "bfddad52bb0110205b94ef12b7666b0bac9a44cdbfa1fc0378018e4a03e26c33",
+      "source": "корпус/заглушка.m3d",
+      "source_sha256": "bfddad52bb0110205b94ef12b7666b0bac9a44cdbfa1fc0378018e4a03e26c33",
+      "modified_for_package": false
+    },
+    {
+      "path": "корпус/заглушка.stl",
+      "bytes": 28949884,
+      "sha256": "ca99da3551c8f88fe36d1294b1cc287019699ac1eec2f52e65c05e2c82978c65",
+      "source": "корпус/заглушка.stl",
+      "source_sha256": "ca99da3551c8f88fe36d1294b1cc287019699ac1eec2f52e65c05e2c82978c65",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/current_calibration_settings.json",
+      "bytes": 583,
+      "sha256": "dea41bedf65e76ef20edf466c6f9b1ef7e71c776d2c4f32382ef16a521f5f26b",
+      "source": "проект_сигма/current_calibration_settings.json",
+      "source_sha256": "dea41bedf65e76ef20edf466c6f9b1ef7e71c776d2c4f32382ef16a521f5f26b",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/current_command_0_3A.txt",
+      "bytes": 80,
+      "sha256": "d1ee9c54a08d8714363d6484b2481f41e16d1670086e43ef477a12a8a5a4f67a",
+      "source": "проект_сигма/current_command_0_3A.txt",
+      "source_sha256": "d1ee9c54a08d8714363d6484b2481f41e16d1670086e43ef477a12a8a5a4f67a",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/current_feedback_0_3A.txt",
+      "bytes": 80,
+      "sha256": "bd70f31264e951fb3298cb20258c0ddf123c5f2678cd17a64ae094235df5699d",
+      "source": "проект_сигма/current_feedback_0_3A.txt",
+      "source_sha256": "bd70f31264e951fb3298cb20258c0ddf123c5f2678cd17a64ae094235df5699d",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_before_feedback_10k.dspproj",
+      "bytes": 33714,
+      "sha256": "f852541c6ad876e58412d939d4fc81fb5204d4c7707314dedb83d07f4e503189",
+      "source": "проект_сигма/Design1_parker_before_feedback_10k.dspproj",
+      "source_sha256": "f852541c6ad876e58412d939d4fc81fb5204d4c7707314dedb83d07f4e503189",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_before_voltage_input.dspproj",
+      "bytes": 40941,
+      "sha256": "dedffeb2849dfb9b99b6490283ce30b0cc98e6b2c47647958be82d84f7b1d87c",
+      "source": "проект_сигма/Design1_parker_before_voltage_input.dspproj",
+      "source_sha256": "dedffeb2849dfb9b99b6490283ce30b0cc98e6b2c47647958be82d84f7b1d87c",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_calibrated.dspproj",
+      "bytes": 16772,
+      "sha256": "02ec542f3696e4505d1e28299dba1cce1f1dbeb996fbaaeaae87b24407136cab",
+      "source": "проект_сигма/Design1_parker_calibrated.dspproj",
+      "source_sha256": "02ec542f3696e4505d1e28299dba1cce1f1dbeb996fbaaeaae87b24407136cab",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_current_calibrated.dspproj",
+      "bytes": 40946,
+      "sha256": "0c3b1fb2ca1e7f42e5322706eb01eebc1274fff471ee89b1f7181cf3cd69328d",
+      "source": "проект_сигма/Design1_parker_current_calibrated.dspproj",
+      "source_sha256": "0c3b1fb2ca1e7f42e5322706eb01eebc1274fff471ee89b1f7181cf3cd69328d",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_current_preliminary.dspproj",
+      "bytes": 33714,
+      "sha256": "255b615d45879d3129086e5384e3c43cf23c8b3c509473b7a1a730f0a257b3f8",
+      "source": "проект_сигма/Design1_parker_current_preliminary.dspproj",
+      "source_sha256": "255b615d45879d3129086e5384e3c43cf23c8b3c509473b7a1a730f0a257b3f8",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_io_calibrated.dspproj",
+      "bytes": 54633,
+      "sha256": "ca56af212cc5124b7bb9970013989cb989cea9db17cff852fd30a4a2bf89388c",
+      "source": "проект_сигма/Design1_parker_io_calibrated.dspproj",
+      "source_sha256": "ca56af212cc5124b7bb9970013989cb989cea9db17cff852fd30a4a2bf89388c",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_transfer_2026-10-27.dspproj",
+      "bytes": 54459,
+      "sha256": "68473e7fcdd412021ea5be6c9a44e739b82610bf1e1b24db6d04dc68e22826e7",
+      "source": "проект_сигма/Design1_parker_transfer_2026-10-27.dspproj",
+      "source_sha256": "68473e7fcdd412021ea5be6c9a44e739b82610bf1e1b24db6d04dc68e22826e7",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_v0.before_calibration.dspproj",
+      "bytes": 16773,
+      "sha256": "f8c25cbbd147e2f616f311aa49335484d58729c74ee0f49f875314678314b3e4",
+      "source": "проект_сигма/Design1_parker_v0.before_calibration.dspproj",
+      "source_sha256": "f8c25cbbd147e2f616f311aa49335484d58729c74ee0f49f875314678314b3e4",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_v0.before_current_calibration.dspproj",
+      "bytes": 18302,
+      "sha256": "4a7004dc02f91f068539f0e030a71794830cc586ab086b61131cf053132578c9",
+      "source": "проект_сигма/Design1_parker_v0.before_current_calibration.dspproj",
+      "source_sha256": "4a7004dc02f91f068539f0e030a71794830cc586ab086b61131cf053132578c9",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Design1_parker_v0.dspproj",
+      "bytes": 54459,
+      "sha256": "68473e7fcdd412021ea5be6c9a44e739b82610bf1e1b24db6d04dc68e22826e7",
+      "source": "проект_сигма/Design1_parker_v0.dspproj",
+      "source_sha256": "68473e7fcdd412021ea5be6c9a44e739b82610bf1e1b24db6d04dc68e22826e7",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/as_code.enc",
+      "bytes": 64024,
+      "sha256": "b2ff166c79c956526eaf3fe4e6366fa9490dcde49de4533f635d031dcb0e5f84",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/as_code.enc",
+      "source_sha256": "b2ff166c79c956526eaf3fe4e6366fa9490dcde49de4533f635d031dcb0e5f84",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list.cir2",
+      "bytes": 1568,
+      "sha256": "8ff50a5183f20c5fc2976d5727f071d9030eb2cdd806a3af648834a973b9abcc",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list.cir2",
+      "source_sha256": "8ff50a5183f20c5fc2976d5727f071d9030eb2cdd806a3af648834a973b9abcc",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/compiler_output.txt",
+      "bytes": 936,
+      "sha256": "6857686f558efe26f2a11f719d10a0e7c58839d9cd99b5ce265005a174e988e9",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/compiler_output.txt",
+      "source_sha256": "6857686f558efe26f2a11f719d10a0e7c58839d9cd99b5ce265005a174e988e9",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/hex_program_data.dat",
+      "bytes": 32768,
+      "sha256": "69c93b45a23a49b5368d24819b03993f143a554bae5735742e3f06d4251cc101",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/hex_program_data.dat",
+      "source_sha256": "69c93b45a23a49b5368d24819b03993f143a554bae5735742e3f06d4251cc101",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/hex_program_simdata.dat",
+      "bytes": 12288,
+      "sha256": "bb365c537a209058254812e4fbd0ba5ff251c65bcdae96a3960005b0b84a97fb",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/hex_program_simdata.dat",
+      "source_sha256": "bb365c537a209058254812e4fbd0ba5ff251c65bcdae96a3960005b0b84a97fb",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/program_data.dat",
+      "bytes": 43008,
+      "sha256": "e2c766b4b7e656d0ff9d7b2882378dc1274225ff15e2350d63d2f31baf1b2a97",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/program_data.dat",
+      "source_sha256": "e2c766b4b7e656d0ff9d7b2882378dc1274225ff15e2350d63d2f31baf1b2a97",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/spi_map.dat",
+      "bytes": 979,
+      "sha256": "b6a7370e678f2a818c70a7bde761bb7cab3ad71ee793b14aba98d1057d63f767",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/spi_map.dat",
+      "source_sha256": "b6a7370e678f2a818c70a7bde761bb7cab3ad71ee793b14aba98d1057d63f767",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/trap.dat",
+      "bytes": 381,
+      "sha256": "12b1e6287f674d71340b745628da6373ed4abe9b278059ec4035a918f3c18276",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/trap.dat",
+      "source_sha256": "12b1e6287f674d71340b745628da6373ed4abe9b278059ec4035a918f3c18276",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/trap.dat",
+      "bytes": 381,
+      "sha256": "12b1e6287f674d71340b745628da6373ed4abe9b278059ec4035a918f3c18276",
+      "source": "проект_сигма/IC 1_Design1_parker_v0/trap.dat",
+      "source_sha256": "12b1e6287f674d71340b745628da6373ed4abe9b278059ec4035a918f3c18276",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/linintdacout.before_calibration.txt",
+      "bytes": 49,
+      "sha256": "67d9198d66f964c3903a58261c1ac3c1187d99b0273ec3f5184cd47cf0a22df9",
+      "source": "проект_сигма/linintdacout.before_calibration.txt",
+      "source_sha256": "67d9198d66f964c3903a58261c1ac3c1187d99b0273ec3f5184cd47cf0a22df9",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/linintdacout.txt",
+      "bytes": 50,
+      "sha256": "2c901ae2846023a49728bf515095e138298adf839e2198f2c593af336832cb9e",
+      "source": "проект_сигма/linintdacout.txt",
+      "source_sha256": "2c901ae2846023a49728bf515095e138298adf839e2198f2c593af336832cb9e",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/linintdacout_calibrated.txt",
+      "bytes": 50,
+      "sha256": "2c901ae2846023a49728bf515095e138298adf839e2198f2c593af336832cb9e",
+      "source": "проект_сигма/linintdacout_calibrated.txt",
+      "source_sha256": "2c901ae2846023a49728bf515095e138298adf839e2198f2c593af336832cb9e",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/README.md",
+      "bytes": 2193,
+      "sha256": "00f7cd40b0df65c4b0b6f726c5fbc32f03152bee25aa9bd3b67c45b59313aaec"
+    },
+    {
+      "path": "проект_сигма/voltage_input_0_10V.txt",
+      "bytes": 82,
+      "sha256": "8add942dc2680d7810319bff0aa960f51d9ef9987cfba1a8f3a4a42fe0645150",
+      "source": "проект_сигма/voltage_input_0_10V.txt",
+      "source_sha256": "8add942dc2680d7810319bff0aa960f51d9ef9987cfba1a8f3a4a42fe0645150",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/voltage_input_settings.json",
+      "bytes": 512,
+      "sha256": "c854be410febe99f995d6d60d528245e63ff1a25eaa7d404318ab08f0328c97b",
+      "source": "проект_сигма/voltage_input_settings.json",
+      "source_sha256": "c854be410febe99f995d6d60d528245e63ff1a25eaa7d404318ab08f0328c97b",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.txt",
+      "bytes": 5732,
+      "sha256": "60e1d97d2e64ac3a1bdfc06f09a3871822bfdd04f385f0cd87fe843ad57dd22e",
+      "source": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.txt",
+      "source_sha256": "60e1d97d2e64ac3a1bdfc06f09a3871822bfdd04f385f0cd87fe843ad57dd22e",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Калибровка_тока_2026-10-27.txt",
+      "bytes": 4887,
+      "sha256": "555a891756cd4d40b65decd445c25b38ff61fe40267032cdb9ad5add694b5d53",
+      "source": "проект_сигма/Калибровка_тока_2026-10-27.txt",
+      "source_sha256": "555a891756cd4d40b65decd445c25b38ff61fe40267032cdb9ad5add694b5d53",
+      "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Калибровка_тока_до_замены_R43.txt",
+      "bytes": 3214,
+      "sha256": "252c404fe014327f8d82df9767e0e030ac8c0bda9bfc48fcc46b785858e03804",
+      "source": "проект_сигма/Калибровка_тока_до_замены_R43.txt",
+      "source_sha256": "252c404fe014327f8d82df9767e0e030ac8c0bda9bfc48fcc46b785858e03804",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Bottom.gbr",
+      "bytes": 91241,
+      "sha256": "37cf2630dac6c644ceeac19fb36932f2457c7778647e56b3660282cd147f9c6f",
+      "source": "схема_плата/Proportional Valve Controller_v0/Bottom.gbr",
+      "source_sha256": "37cf2630dac6c644ceeac19fb36932f2457c7778647e56b3660282cd147f9c6f",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Through1.drl",
+      "bytes": 4552,
+      "sha256": "6bbc45cd9437c7568b2bb35bdc8d92c66bf6aab7004b795fb6acf5bb25059525",
+      "source": "схема_плата/Proportional Valve Controller_v0/Through1.drl",
+      "source_sha256": "6bbc45cd9437c7568b2bb35bdc8d92c66bf6aab7004b795fb6acf5bb25059525",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Through2.tap",
+      "bytes": 4082,
+      "sha256": "6d4baa0ed1fcc2183c07747a9ba21cc9545815c3ddfac4b1ff742fb2f82a899a",
+      "source": "схема_плата/Proportional Valve Controller_v0/Through2.tap",
+      "source_sha256": "6d4baa0ed1fcc2183c07747a9ba21cc9545815c3ddfac4b1ff742fb2f82a899a",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Top.gbr",
+      "bytes": 109235,
+      "sha256": "c40b335a6eea4e63cbec0c6d8a879749b277305c6ed173c564c89067ba584836",
+      "source": "схема_плата/Proportional Valve Controller_v0/Top.gbr",
+      "source_sha256": "c40b335a6eea4e63cbec0c6d8a879749b277305c6ed173c564c89067ba584836",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Верхняямаркировка.gbr",
+      "bytes": 160295,
+      "sha256": "74bf3c2c5f59b5b521ddb88969a4afd576e0d5b515022d3912f2eeb6b5843f6a",
+      "source": "схема_плата/Proportional Valve Controller_v0/Верхняямаркировка.gbr",
+      "source_sha256": "74bf3c2c5f59b5b521ddb88969a4afd576e0d5b515022d3912f2eeb6b5843f6a",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Верхняямаска.gbr",
+      "bytes": 7923,
+      "sha256": "08c47df1993dc30e0b7969c747c2840b1f2340c894440e2720849a9bfbf88700",
+      "source": "схема_плата/Proportional Valve Controller_v0/Верхняямаска.gbr",
+      "source_sha256": "08c47df1993dc30e0b7969c747c2840b1f2340c894440e2720849a9bfbf88700",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Границыплаты.gbr",
+      "bytes": 230,
+      "sha256": "9d451fa8584f691f33a1e5558b66ba54db2846f1fa481db2ad644ad1b015171a",
+      "source": "схема_плата/Proportional Valve Controller_v0/Границыплаты.gbr",
+      "source_sha256": "9d451fa8584f691f33a1e5558b66ba54db2846f1fa481db2ad644ad1b015171a",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Нижняямаска.gbr",
+      "bytes": 2081,
+      "sha256": "de5abd8951dce9a4dee59151104958f798b66de315ab9eb06b29534cf927610f",
+      "source": "схема_плата/Proportional Valve Controller_v0/Нижняямаска.gbr",
+      "source_sha256": "de5abd8951dce9a4dee59151104958f798b66de315ab9eb06b29534cf927610f",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/Proportional Valve Controller_v0/Плата.gbr",
+      "bytes": 232,
+      "sha256": "7e0b0282fa46758fe15ae6c3fc64e5f4ac7865bf46865b3f8bdb29c756c65249",
+      "source": "схема_плата/Proportional Valve Controller_v0/Плата.gbr",
+      "source_sha256": "7e0b0282fa46758fe15ae6c3fc64e5f4ac7865bf46865b3f8bdb29c756c65249",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/README.md",
+      "bytes": 3491,
+      "sha256": "7e28512df7721079b5d0e4d108f8b99023d29a43391844799a36d756dbe443ce"
+    },
+    {
+      "path": "схема_плата/Спецификация_для_пайк.xlsx",
+      "bytes": 24229,
+      "sha256": "fd7d7ce15a02bc9ff0ae32e6ad3d1971385cc432c43b1d2ab8f9043551ba51b0",
+      "source": "схема_плата/Спецификация_для_пайк.xlsx",
+      "source_sha256": "fd7d7ce15a02bc9ff0ae32e6ad3d1971385cc432c43b1d2ab8f9043551ba51b0",
+      "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/схема.pdf",
+      "bytes": 235094,
+      "sha256": "8aa962325f2592fd91f79010b7ca1ed88a3f631f3d9b930e92d959d2ef851263",
+      "source": "схема_плата/схема.pdf",
+      "source_sha256": "8aa962325f2592fd91f79010b7ca1ed88a3f631f3d9b930e92d959d2ef851263",
+      "modified_for_package": false
+    },
+    {
+      "path": "фото/PCB_BOTTOM.JPG",
+      "bytes": 14167019,
+      "sha256": "091cfeef9aa2c1a19a2c4f0d54546033c2764ca2bacc6a3ee85f7f174938c206",
+      "source": "фото/PCB_BOTTOM.JPG",
+      "source_sha256": "091cfeef9aa2c1a19a2c4f0d54546033c2764ca2bacc6a3ee85f7f174938c206",
+      "modified_for_package": false
+    },
+    {
+      "path": "фото/PCB_TOP.JPG",
+      "bytes": 15868312,
+      "sha256": "5d71c668c0fc71e791c6b94faefd30c8dbdd06274b067418991017256d608050",
+      "source": "фото/PCB_TOP.JPG",
+      "source_sha256": "5d71c668c0fc71e791c6b94faefd30c8dbdd06274b067418991017256d608050",
+      "modified_for_package": false
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/neuroandriyanov/PropValve-RE06MT",
+    "visibility": "private",
+    "branch": "main"
+  }
+}

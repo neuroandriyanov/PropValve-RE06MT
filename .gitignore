@@ -1,0 +1,25 @@
+# Local measurements and temporary work
+/output/
+/tmp/
+/tools/bin/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.log
+*.elibak
+*.dchbak
+*.dipbak
+# Local executables are rebuilt from source
+*.exe
+*.dll
+# Do not include secrets or user-specific editor configuration
+.env
+.env.*
+.vscode/
+.idea/

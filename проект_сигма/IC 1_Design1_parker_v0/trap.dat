@@ -1,0 +1,5 @@
+Instance  9 Signal ADC1_RAW_ReadBackAlg1 trap value 24 register MAC_out
+Instance  11 Signal ADC0_RAW_ReadBackAlg3 trap value 34 register MAC_out
+Instance  15 Signal VIN_FILTERED_ReadBackAlg4 trap value 54 register MAC_out
+Instance  20 Signal I_MEAS_0_1_ReadBackAlg2 trap value 103 register MAC_out
+Instance  24 Signal VIN_MEAS_0_1_ReadBackAlg5 trap value 144 register MAC_out
