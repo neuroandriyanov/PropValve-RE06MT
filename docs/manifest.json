@@ -1,15 +1,18 @@
 {
   "format_version": 1,
-  "package_revision": 3,
-  "packaged_date": "2026-10-31",
+  "package_revision": 4,
+  "packaged_date": "2026-11-02",
   "calibration_data_date": "2026-10-27",
   "hardware_status_reported_date": "2026-10-31",
   "hardware_status_source": "Author message: board works on the machine, passed testing, no observed board heating. Test dates and numerical temperatures were not specified.",
-  "previous_manifest_sha256": "3364eab003f7ebde0ae53c34e9d55539db569dd1ecba10a89b6c11642ac28457",
+  "previous_manifest_sha256": "04c51341981e5b2fb0cdc8a531d84a364df391f747fdc804bc3bf119e86843ff",
   "revision_notes": {
-    "documentation": "Added private repository link and updated publication information. Hardware, DSP projects, tools, calibration and measurements unchanged."
+    "photos": "Added original installation photos of the enclosure on the machine and the board inside it, with descriptive filenames and README captions. Image bytes unchanged.",
+    "documentation": "Updated photo inventory and enclosure references; removed stale current-private and license-pending statements. GitHub visibility was already public; no access settings changed.",
+    "upstream_changes": "Preserved upstream README and NOTICE revisions and added LICENSE and LICENSES/CERN-OHL-P-2.0.txt from main at b774e7c. Prior manifest already differed for README and NOTICE.",
+    "unchanged": "Hardware files, DSP projects, tools, calibration tables and measurement logs."
   },
-  "description": "Private repository package revision 3; manifest excludes itself. Original working folder remains unchanged.",
+  "description": "Repository package revision 4; manifest excludes itself. Original working folder remains unchanged.",
   "files": [
     {
       "path": ".gitattributes",
@@ -377,8 +380,8 @@
     },
     {
       "path": "docs/INVENTORY.md",
-      "bytes": 8806,
-      "sha256": "61ffc4eda2590598a2bfa9c1aeb0016b0f383100c6d2bd53c3ec47c2a64e4492"
+      "bytes": 10800,
+      "sha256": "b7d0a590879fffc5fab5750203c4834f8a6eae646090005939dca16c3461fe09"
     },
     {
       "path": "docs/SETUP.md",
@@ -387,8 +390,8 @@
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 10504,
-      "sha256": "7ca0bd30d399142553bc7d6540cc2e9f9d42afc0c41f390b0b56089ca8fc5d33"
+      "bytes": 10946,
+      "sha256": "596d52935afb99f17fcb4ceba6dc3c9158d48170b3a0b00dec71aad57c1ee8aa"
     },
     {
       "path": "docs/VERIFICATION.md",
@@ -538,13 +541,13 @@
     },
     {
       "path": "NOTICE.md",
-      "bytes": 1894,
-      "sha256": "e6d705e47ab20081f921dc5ca6b3afcc0893e99c35c3e39e6791b92fc68b4918"
+      "bytes": 4706,
+      "sha256": "2f5a7c2a2a582b09d96425bbecd126f06ab2b6428b131ed24c1bf553c573dd0a"
     },
     {
       "path": "README.md",
-      "bytes": 9115,
-      "sha256": "5748453c13c42f9193f354c0dff0bb824c1471074ed17f216504b74bd1999554"
+      "bytes": 8889,
+      "sha256": "450d2779d82d497c1c68f15b026bf58e77d90becf18fe595f4661ea611fca67a"
     },
     {
       "path": "tools/check_project.py",
@@ -651,8 +654,8 @@
     },
     {
       "path": "корпус/README.md",
-      "bytes": 1310,
-      "sha256": "f3217ce52de79705b16ae24500518ec6aeb8835a79a7ea6b9cc881ebca29ac6d"
+      "bytes": 1729,
+      "sha256": "3879dda467ea92522e2c5a8bc2d2895821449247b67faee18c70adcb1bcaaa80"
     },
     {
       "path": "корпус/RUICHI A09.jpg",
@@ -1031,11 +1034,37 @@
       "source": "фото/PCB_TOP.JPG",
       "source_sha256": "5d71c668c0fc71e791c6b94faefd30c8dbdd06274b067418991017256d608050",
       "modified_for_package": false
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "sha256": "6ab715616aef817208e30887bcd114f7aeab583b880c18b1ffe7ef797803b1e3"
+    },
+    {
+      "path": "LICENSES/CERN-OHL-P-2.0.txt",
+      "bytes": 8855,
+      "sha256": "eeecc593866fa1c3b80189c7e3dc0ceb77740557fa92f81771f891cc54c579cb"
+    },
+    {
+      "path": "фото/Корпус_на_машине.jpg",
+      "bytes": 3409403,
+      "sha256": "c943f0cb2795c1138f69528ee66d341e2f2647f13905f434e85fb7c23c916a5e",
+      "source": "фото/Корпус.jpg",
+      "source_sha256": "c943f0cb2795c1138f69528ee66d341e2f2647f13905f434e85fb7c23c916a5e",
+      "modified_for_package": false
+    },
+    {
+      "path": "фото/Плата_в_корпусе.jpg",
+      "bytes": 3308742,
+      "sha256": "acb237ccb513083572abe25f3ea4c48d7fd842adb68934d48736034d5009f0d2",
+      "source": "фото/плата_в_корасе.jpg",
+      "source_sha256": "acb237ccb513083572abe25f3ea4c48d7fd842adb68934d48736034d5009f0d2",
+      "modified_for_package": false
     }
   ],
   "repository": {
     "url": "https://github.com/neuroandriyanov/PropValve-RE06MT",
-    "visibility": "private",
+    "visibility": "public",
     "branch": "main"
   }
 }
