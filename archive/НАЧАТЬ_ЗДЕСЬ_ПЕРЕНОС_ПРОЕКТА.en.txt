@@ -1,0 +1,447 @@
+PROPVALVE PROJECT — TRANSFER TO ANOTHER PC AND CONTINUING WORK
+State as of 27 October 2026, time zone Europe/Samara.
+
+English translation of НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.txt.
+This is a historical record; README.en.md in this folder explains later corrections.
+
+This file describes the project's actual history, settings and limitations.
+It does not replace checking current hardware connections and is not permission
+to energize a load in a new session. Resoldered values are reported by the user;
+electrical verification is described below.
+
+1. PURPOSE AND CURRENT STATUS
+================================
+The user Sergey developed an ADAU1701 proportional-valve control board
+to replace the original Parker board. SigmaStudio processes DC control
+signals here, not audio.
+
+Intended operating logic:
+  X4, 0..10 V input -> 0..3 A current command -> solenoid.
+  Measured actual current 0..3 A -> X3, 0..10 V monitor output.
+
+Current regulation is performed by a hardware analog loop using TL494.
+The DSP generates the command, filters/normalizes measurements and generates
+the monitor output. No separate digital PI/PID controller was added.
+
+Voltage-output, current-command, current-measurement and voltage-input
+calibrations are complete. The user then connected them into the working path.
+The latest schematic and netlist were checked: the main connections match
+the intended logic. A full run of the entire combined system after this
+rewiring has not yet been performed. Do not confuse individual calibration
+checks with testing the final system under load.
+
+2. WHICH FILES TO OPEN AND WHAT TO COPY
+===========================================
+Transfer the ENTIRE PropValve folder, keeping its structure.
+Paths below are relative to its root; the root may be anywhere on another PC.
+
+CURRENT WORKING FILE:
+  проект_сигма/Design1_parker_v0.dspproj
+It already contains the final connections of the input, current command and
+actual-current monitor output. Manual test sources CURRENT_INPUT_0_1
+and DC2_4 were removed from this version. Do not address them with an old script.
+
+TRANSFER SNAPSHOT:
+  проект_сигма/Design1_parker_transfer_2026-10-27.dspproj
+Created from the latest saved working file when preparing this description.
+SHA256 of both files when the snapshot was created:
+  68473E7FCDD412021EA5BE6C9A44E739B82610BF1E1B24DB6D04DC68E22826E7
+Last write of the source file before the snapshot: 27.10.2026 16:14:54.
+The snapshot reflects the saved disk file, not a separate DSP RAM dump.
+If the project was edited after this date, save the changes and transfer
+the newer working file. An asterisk in SigmaStudio can also appear when
+indicators update; the file itself does not contain the entire chat history.
+
+PREVIOUS REFERENCE COPIES:
+  Design1_parker_io_calibrated.dspproj — all four calibrations, but a version
+    BEFORE the final working reconnections; still contains manual DC sources.
+  Design1_parker_current_calibrated.dspproj — current and feedback calibration.
+  Design1_parker_calibrated.dspproj — early 0..10 V output calibration.
+  *before*.dspproj, *preliminary*.dspproj — historical backups.
+They are under проект_сигма/. Do not select an early copy just because of “calibrated”.
+
+DIRECTORIES:
+  проект_сигма/ — working projects, tables, settings, reports, compiler outputs.
+  схема_плата/ — схема.pdf, DipTrace .dch/.dip sources, libraries, BOM.
+  программа_мультиметра/ — manufacturer instrument application and its libraries.
+  tools/meter/ — independently developed direct USB/HID multimeter polling.
+  tools/sigma/ — SigmaStudio analysis and automation helpers.
+  output/meter/ — real JSON measurements, records and final schematic captures.
+  tmp/ — temporary captures/schematic crops/diagnostics; not required for startup.
+If transferring only the essential minimum, keep the first five directories.
+Do not treat temporary files and old window captures as the PC's current state.
+
+3. HARDWARE AND BOARD CHANGES
+=================================
+DSP: ADAU1701. Software used: Analog Devices SigmaStudio 4.7.
+Project sample rate: 96 kHz. The project IC is named "IC 1"; EEPROM is "IC 2".
+Test coil: the user authorized calibration up to 3 A.
+Current sensor: ACS712, +/-5 A variant, nominally 185 mV/A.
+Main original PDF: схема_плата/схема.pdf.
+
+Changes confirmed by the user:
+  R43: 180 Ω -> 10 kΩ, ADC1 current-measurement input.
+  R42: 180 Ω -> 10 kΩ, ADC0 voltage-command input.
+The PDF may still show the old 180 Ω; the physical board has already changed.
+R7/R12 are 51 kΩ according to the schematic; replacement was not reported.
+They affect TL494 feedback, not only the DSP measurement path.
+
+Channel mapping:
+  ADC0 — X4, external 0..10 V input through DA8.1/DA8.2 and R42.
+  ADC1 — current-sensor signal through DA4.1 and R43.
+  DAC0 and DAC1 — differential current command through DA5 and DA4.2.
+  DAC2 — reference leg of the 0..10 V output amplifier; its digital command = 0.
+  DAC3 — calibrated signal for output amplifier DA7.1 to X3.
+
+DA8's input stage also uses refdac. Therefore, with 0 V at X4, raw ADC0
+is around -0.0205, not around -1. At 10 V it is around +0.7495.
+This was verified by real measurements after R42 replacement.
+
+IMPORTANT: X3–X4 JUMPER
+For input calibration the user connected output X3 to input X4.
+Its removal after the last logic reconnection has NOT yet been confirmed.
+In the working circuit, X3 now represents actual current and X4 commands current.
+Leaving the jumper closes positive feedback through the entire control path.
+Check and remove it before applying an external command and testing the
+combined system. Verify signal and common connections against the PDF.
+
+The assistant downloaded projects to DSP RAM and did not write EEPROM.
+After a power cycle, the older EEPROM program may load;
+recheck the board state instead of assuming it matches the disk file.
+
+4. ACTUAL WORKING SIGMASTUDIO CIRCUIT
+========================================
+Command path:
+  Input1, ADC0
+    -> VIN_LPF_20Hz
+    -> VIN_TABLE_0_10V
+    -> VIN_LIMIT_MIN (> comparison with VIN_ZERO=0)
+    -> VIN_LIMIT_MAX (< comparison with VIN_ONE=1)
+    -> CURRENT_0_3A
+    -> ZERO_OFF
+    -> DAC0 and through Inv1 -> DAC1.
+
+VIN_MEAS_0_1 indicates normalized input voltage after the clamps.
+Normalized value * 10 = X4 voltage in volts.
+ADC0_RAW is raw ADC0; VIN_FILTERED is after low-pass filtering, before normalization.
+
+ZERO_OFF is an AB in CD out conditional block:
+  A = normalized 0..1 command;
+  B = ZERO_CONSTANT = 0;
+  C = CURRENT_0_3A output;
+  D = ZERO_CONSTANT = 0;
+  condition A > B, otherwise D is output.
+Inv1 must be enabled (coefficient -1).
+Thus DAC0 = positive table command,
+DAC1 = its negative copy. At zero command both digital commands are 0.
+
+Actual-current and monitor-output path:
+  Input1, ADC1
+    -> CURRENT_LPF_20Hz
+    -> FB_LIMIT_MIN (>, FB_MIN_CONST=-0.78)
+    -> FB_LIMIT_MAX (<, FB_MAX_CONST=+0.70)
+    -> I_FEEDBACK_0_1
+    -> Interpolator1
+    -> DAC3 -> DA7.1 -> X3.
+
+I_MEAS_0_1 indicates normalized actual current.
+Normalized value * 3 = current in amperes.
+ADC1_RAW is the diagnostic raw signal before the low-pass filter.
+DC2_3 -> DAC2 must remain 0.
+
+Transfer functions in engineering units:
+  I_command = 3 * U_X4 / 10 A;
+  U_X3 = 10 * I_actual / 3 V, within the normalized scale.
+For example, 5 V at the input commands 1.5 A. If actual current is 1.4 A,
+the monitor output should read about 4.67 V, not necessarily 5 V.
+
+Latest netlist:
+  проект_сигма/IC 1_Design1_parker_v0/net_list.cir2
+Its algorithm names differ from visible block names; match them using
+nid/pins and project data. Latest report: 153 instructions,
+38 Data RAM words, 45 Parameter RAM words. The project sample rate is 96 kHz.
+
+5. CALIBRATION TABLES — CHECKED AGAINST THE CURRENT FILE
+======================================================
+All values below are DSP digital data, not voltages directly at a pin.
+Control data is usually in 5.23 format. DSP Readback returns 5.19:
+these are different formats and cannot be decoded using the same divisor.
+Nodes within each table are UNIFORMLY spaced from Min to Max.
+
+A. 0..10 V input -> normalized value, VIN_TABLE_0_10V:
+  Min=-1; Max=+1; 5 ADC0 nodes: -1, -0.5, 0, +0.5, +1.
+  -1.2791438818551657
+  -0.6261845198303900
+   0.02677484219438531
+   0.6762541060654503
+   1.3251072419904226
+Negative/above-1 coefficients at outer nodes are intentional:
+they extend the calibration function over the full ADC range.
+VIN_LIMIT_MIN/MAX clamp the final result to 0..1.
+
+B. Normalized command -> current-control code, CURRENT_0_3A:
+  Min=0; Max=1; nodes: 0, 0.25, 0.5, 0.75, 1.
+  0.0232187500000000
+  0.15965067486956522
+  0.29005681969979985
+  0.4185374112827678
+  0.5469142775502329
+The first point is nonzero because of analog-controller offset.
+A separate ZERO_OFF provides complete switch-off.
+
+C. ADC1 -> normalized actual current, I_FEEDBACK_0_1:
+  Min=-0.78; Max=+0.70; nodes: -0.78, -0.41, -0.04, +0.33, +0.70.
+  0
+  0.2457725268587229
+  0.4934890604665372
+  0.7422585129761888
+  1
+FB_MIN_CONST and FB_MAX_CONST must match this table's Min/Max.
+
+D. Normalized signal -> 0..10 V output, Interpolator1:
+  Min=0; Max=1; nodes: 0, 0.25, 0.5, 0.75, 1.
+  -0.001020
+  -0.077378
+  -0.153747
+  -0.230275
+  -0.306728
+Negative numbers are correct here: DAC and output-stage polarity mean
+that a negative digital command increases X3 voltage.
+The calibration is valid with DAC2=0.
+
+Separate files in проект_сигма/:
+  linintdacout.txt, linintdacout_calibrated.txt — output coefficients.
+  current_command_0_3A.txt — current command.
+  current_feedback_0_3A.txt — current measurement.
+  voltage_input_0_10V.txt — voltage input.
+  current_calibration_settings.json, voltage_input_settings.json — ranges and settings.
+A coefficient text file does NOT contain Min/Max, filter or clamps.
+The complete .dspproj is preferable for restoration.
+
+6. REAL CHECKS AND ACCURACY LIMITATIONS
+===========================================
+The 0..10 V output was checked separately at several points; observed
+differences relative to the multimeter reading were about 1 mV. Record:
+  output/meter/output_calibration_verification.json
+
+Latest separate current-command/measurement check:
+  command 0.5 -> multimeter 1.4995 A, DSP 0.4994895;
+  command 0.75 -> 2.251 A, DSP 0.7506799;
+  command 1 -> 2.998 A, DSP 0.9999981;
+  return to command 0 -> multimeter 0.000 A, DSP 0.
+Maximum command-to-measured-current difference in the series: 7.5 mA;
+maximum DSP-to-multimeter measurement difference: about 2.8 mA.
+  output/meter/feedback_final_verification.json
+
+Current-channel zero drift is noticeable during warm-up/between series,
+equivalent to about 26 mA in one series. During cooling, the indicator
+may show small positive readings with actual current zero.
+A static table and low-pass filter do not remove this drift. Automatic zero is not implemented.
+Do not claim guaranteed 2.8 mA accuracy at every temperature.
+Normalized-signal clamps do not protect against physical overcurrent.
+A signal already clamped to one cannot indicate the amount by which the range
+has been exceeded; diagnostics require the raw measurement channel.
+
+After R42 replacement, the 0..10 V input was checked against a voltmeter at 11 points:
+  0 V -> approximately 0.00001;
+  4.999 V -> 0.4998142;
+  10.00 V -> 0.9998871.
+Maximum observed input-referred difference: 1.326 mV.
+  output/meter/voltage_input_raw.json
+  output/meter/voltage_input_filtered.json
+  output/meter/voltage_input_verify.json
+This is the difference from the displayed instrument reading in this series,
+not proof of absolute metrological accuracy better than the multimeter itself.
+
+LINEAR-INTERPOLATOR PITFALL:
+Do not assume it correctly clamps its own input outside Min/Max.
+Out-of-range inputs caused false readings at the scale endpoints.
+FB_LIMIT_MIN/MAX therefore precede the current table. For voltage input,
+the table retains the full -1..1 range and the normalized output is clamped separately.
+Do not remove clamps or change ranges without rechecking the endpoints.
+
+Before replacing R43=180 Ω, the current channel saturated at both ends;
+those original measurements do not describe the current R43=10 kΩ calibration.
+feedback_verification_without_limits.json and other intermediate records
+describe diagnostic/unsuccessful stages. Use final/verify for final results,
+but remember that these tests preceded the final working reconnections.
+
+7. PLANNED BUT NOT YET COMPLETED
+========================================
+1) Confirm removal of the X3–X4 jumper and run a full check of the combined
+   circuit at 0 / 2.5 / 5 / 7.5 / 10 V.
+   Target currents: 0 / 0.75 / 1.5 / 2.25 / 3 A.
+   Compare X3 voltage to ACTUAL current * 10/3.
+
+2) Add a small off band/hysteresis around zero command input.
+   ZERO_OFF currently compares with exact zero, so small positive VIN noise
+   can enable the table command. Proposed initial thresholds were:
+   switch off below 10 mV (0.001 normalized input),
+   switch on above 20 mV (0.002). These values are NOT implemented or tested yet.
+   Separate threshold B from zero-output constant D.
+   Do not simply change ZERO_CONSTANT to 0.001: it currently supplies both B and D.
+
+3) Check current-zero readings on a cold and warm board.
+   Do not conceal actual current or a fault by forcing the reading to zero
+   solely because the command is zero.
+
+RAM checks of the latest combined version during the last review did not
+reliably confirm loaded parameters (API error/zero response).
+Connection correctness was inferred from the schematic and netlist, not a full
+live test. Recheck power, USB communication and downloading on a new PC.
+
+8. STARTUP ON ANOTHER PC
+=======================
+1. Copy the whole folder; open this file and the PDF schematic.
+2. Install SigmaStudio 4.7 and the official driver for the USBi/programmer used.
+   For direct multimeter polling, install ordinary Python 3 for Windows
+   (preferably 64-bit 3.11+). capture_sigma.py screenshots require Pillow.
+3. Open the main file, retaining the name Design1_parker_v0.dspproj.
+   Renaming the project changes the compiler-output directory;
+   old Python scripts with fixed trap.dat paths need adaptation.
+4. Check actual connections, zero external command, R42/R43 values,
+   absence of the calibration jumper and whether energizing the load is allowed.
+5. Check the constants and Inv1 from the sections above. The latest working
+   version already uses the external input; old manual test DC sources are absent.
+6. When ready, download RAM with Action -> Link Compile Download (F7).
+   Do not separately write EEPROM without a task requiring persistent loading.
+7. Indicators: Ctrl+F11 enables continuous reading;
+   Ctrl+F12 disables it. Check >/< conditional blocks and coefficients before a run.
+8. First check the zero state and fresh multimeter readings,
+   then check the operating range in stages. Do not treat old latest.json as live data.
+
+9. MULTIMETER AND DIRECT POLLING WITHOUT SCREENSHOTS
+===========================================
+The user identified the instrument as UNI-T UT61D+.
+Actual adapter used: WCH CH9329, HID VID:PID 1A86:E429.
+It is not CP2110, although the manufacturer application includes CP2110 DLLs.
+The manufacturer utility could remain open; stop its polling if it interferes.
+IDA and Advanced Serial Port Monitor were unnecessary for the working solution.
+
+Run from the PropValve root with an ordinary installed Python:
+  py -3 tools/meter/read_meter.py --list
+  py -3 tools/meter/read_meter.py --count 1
+  py -3 tools/meter/read_meter.py --count 3 --interval 0.5
+  py -3 tools/meter/read_meter.py --count 0 --interval 1 --latest output/meter/latest.json --log output/meter/readings.jsonl
+The last command runs until Ctrl+C and creates no service or startup entry.
+
+Voltage: DC V mode, V/COM probes, parallel connection to X3/X4.
+Current: suitable current input/mode, connected in series with the coil.
+Check JSON: ok, checksum_valid, calibration_usable, quantity, unit,
+volts/amps and received_unix freshness. calibration_usable=true can apply
+to either current or voltage; quantity must be checked.
+HOLD/REL/MIN/MAX/PEAK/overload/low battery disqualify calibration readings.
+The instrument was in DC V at the end of earlier work; verify it again at the new location.
+
+tools/meter/meter.ps1 contains an old absolute Python path in the Sergey profile.
+On a new PC, use the py -3 commands above or correct the launcher path.
+Protocol details and tests: tools/meter/ИНСТРУКЦИЯ.txt.
+Decoder tests without powering the board:
+  py -3 -m unittest discover -s tools/meter -p "test_*.py" -v
+
+10. SIGMASTUDIO AUTOMATION AND NONPORTABLE PARTS
+===================================================
+The principal automation route is the installed official SigmaStudio API:
+  tools/sigma/SigmaBridge.cs -> tools/sigma/SigmaBridge2.exe
+  tools/sigma/sigma_api.py
+The earlier SigmaBridge.exe is not equivalent to the latest SigmaBridge2.exe.
+.NET Framework and libraries from the installed SigmaStudio are required.
+SigmaBridge.cs contains the path C:\Program Files\Analog Devices\SigmaStudio 4.7.
+For another installation, change the path and rebuild; do not copy arbitrary DLLs.
+
+Example build from PowerShell at the project root:
+  & 'C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe' /nologo /r:System.Web.Extensions.dll /r:System.Drawing.dll /out:tools\sigma\SigmaBridge2.exe tools\sigma\SigmaBridge.cs
+
+Example that only lists API methods:
+  .\tools\sigma\SigmaBridge2.exe inspect
+call accepts a method name and a JSON file containing an argument array.
+This is a full control API: some methods write parameters and download the DSP.
+Do not run arbitrary saved args.json files without checking their contents.
+
+The API supports INSERT_OBJECT_POINT, CONNECT_OBJECT, DISCONNECT_OBJECT,
+GET/SET_OBJECT_PROPERTY, COMPILE_PROJECT, PARAMETER/REGISTER_READ and SAFELOAD.
+Some method names in the supplied API contain the typo SAFELAOD;
+use the names actually returned instead of correcting them by guesswork.
+Spaces in object names matter: for example, the original "ABCD 1", not "ABCD1".
+Branching a connection needs a T Connection; reconnecting an occupied ordinary
+output with CONNECT_OBJECT can return false.
+
+Important behavior found on this PC:
+  - API SAVE_PROJECT produced a regional-format error;
+    ordinary Ctrl+S in the interface worked. Numeric fields need a decimal point;
+    newly created blocks could acquire commas and prevent saving.
+  - the UI rounded interpolator Min/Max fields to two decimals;
+    check actual saved values rather than trusting the entered text.
+  - after API compilation, new Readback blocks could retain old data;
+    standard F7 through the UI refreshed their binding. Then use Ctrl+F11.
+  - disable continuous indicators with Ctrl+F12 before batch DSP reads;
+    otherwise capture-register contention and USB/API delays are possible.
+  - capture register 2074 (0x081A), 3-byte reads, 5.19 format worked reliably.
+    Select a point by writing 2 bytes: (program_counter << 2) | 2 for MAC_out.
+    Obtain program_counter from a FRESH trap.dat after the latest compilation.
+  - register 2075 was tried for independent capture but caused delays/timeouts;
+    current capture_node.py was returned to the verified 2074.
+  - parameter addresses change when compiling or reordering blocks.
+    An old coefficient address must not be used as a fixed constant.
+  - changing parameters of a new, uncompiled block with realtime active
+    may access unassigned/incorrect addresses.
+    First build and download the connected circuit safely, then change parameters
+    and verify the current map. Check all commands before loaded testing.
+
+Compiler maps for the current project name:
+  проект_сигма/IC 1_Design1_parker_v0/net_list_out2/spi_map.dat
+  проект_сигма/IC 1_Design1_parker_v0/net_list_out2/trap.dat
+  проект_сигма/IC 1_Design1_parker_v0/net_list_out2/compiler_output.txt
+
+WINDOWS UI TOOLS:
+In that conversation, the user explicitly authorized Win32/UI Automation for
+SigmaStudio because the standard capture/click tool did not work. This is a
+historical fact; follow the current session's rules and permissions on a new PC.
+tools/sigma/win32_sigma.py checks the SStudio.exe process.
+capture_sigma.py captures a particular window using GDI/Pillow.
+point_sigma.py binds an action to a fresh capture and checks PID,
+geometry and age; old captures must not be reused.
+
+ALL HWND, PID, parent HWND and coordinates from the earlier PC ARE OBSOLETE.
+They are recorded in list_controls.py, some verify/measure/calibration
+scripts and records. Discover windows and controls again on another PC.
+For EDIT controls, WM_GETTEXT reliably read current contents;
+GetWindowText could return an old label inconsistent with the field's contents.
+Text changes required Enter confirmation with real focus.
+
+DO NOT BATCH-RUN CONSTRUCTION/CALIBRATION SCRIPTS:
+  install_*.py, build_voltage_input.py, connect_voltage_input.py,
+  finish_zero_gate.py, fit_*.py, refine_feedback.py, finalize_*.py,
+  measure_*.py, verify_*.py, calibrate_current.py, patch_table.py.
+They were created for a particular intermediate project and old names/controls,
+automatically change commands and can apply 3 A or 10 V.
+Some are no longer applicable: manual sources are gone, connections changed,
+and parameter addresses and window numbers differ. Read and adapt the code first.
+These are tools/work history, not a universal bench-startup application.
+
+Reading a saved project without starting .NET objects:
+  tools/sigma/nrbf_project.py — data-only NRBF .dspproj parsing;
+  tools/sigma/list_project.py and inspect_cells.py — inspection helpers.
+Do not replace this parsing with unsafe BinaryFormatter deserialization.
+
+11. OFFICIAL REFERENCE MATERIALS
+====================================
+ADAU1701, ADC input resistors, formats, capture registers:
+  https://www.analog.com/media/en/technical-documentation/data-sheets/adau1701.pdf
+Official SigmaStudio API:
+  https://wiki.analog.com/resources/tools-software/sigmastudio/usingsigmastudio/scripting/server
+  https://wiki.analog.com/_media/resources/tools-software/sigmastudio/developmentenvironment/sigmastudio_scripting.pdf
+The particular board schematic and measurement records take precedence when
+restoring this exact configuration; component documentation is used to verify calculations.
+
+12. SHORT PROMPT FOR A NEW CONVERSATION
+======================================
+You can tell a new assistant:
+"We are working with a transferred PropValve folder. Read
+НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.en.txt, then the current Design1_parker_v0.dspproj,
+схема_плата/схема.pdf and records. We have ADAU1701, SigmaStudio 4.7, Fs=96 kHz,
+R42=R43=10 kΩ. X4 input 0..10 V commands 0..3 A; X3 reports actual current
+on a 0..10 V scale. First check the current circuit and connections; old
+calibration scripts must not be run without adapting them to new windows and project version."
+
+END OF FILE.
