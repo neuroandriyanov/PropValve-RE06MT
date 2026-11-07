@@ -1,5 +1,7 @@
 # PropValve: управление Parker RE06M*T на ADAU1701
 
+[Русский](README.md) | [English](README.en.md)
+
 Репозиторий: [neuroandriyanov/PropValve-RE06MT](https://github.com/neuroandriyanov/PropValve-RE06MT).
 
 Выносная плата для замены штатной электроники пропорционального клапана. Parker серии **RE06M*T**. Особенность проекта — использование аудиопроцессора **ADAU1701 SigmaDSP для обработки постоянных сигналов управления**, фильтрации, калибровки и диагностики клапана.

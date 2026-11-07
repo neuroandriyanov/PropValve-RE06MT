@@ -1,18 +1,30 @@
 {
   "format_version": 1,
-  "package_revision": 4,
-  "packaged_date": "2026-11-02",
+  "package_revision": 5,
+  "packaged_date": "2026-11-07",
   "calibration_data_date": "2026-10-27",
   "hardware_status_reported_date": "2026-10-31",
   "hardware_status_source": "Author message: board works on the machine, passed testing, no observed board heating. Test dates and numerical temperatures were not specified.",
-  "previous_manifest_sha256": "04c51341981e5b2fb0cdc8a531d84a364df391f747fdc804bc3bf119e86843ff",
+  "previous_manifest_sha256": "815aa4d6a8344eee9c840a980fa7b3d3cda95a952d5d6681af4ee06a8041a02e",
   "revision_notes": {
-    "photos": "Added original installation photos of the enclosure on the machine and the board inside it, with descriptive filenames and README captions. Image bytes unchanged.",
-    "documentation": "Updated photo inventory and enclosure references; removed stale current-private and license-pending statements. GitHub visibility was already public; no access settings changed.",
-    "upstream_changes": "Preserved upstream README and NOTICE revisions and added LICENSE and LICENSES/CERN-OHL-P-2.0.txt from main at b774e7c. Prior manifest already differed for README and NOTICE.",
-    "unchanged": "Hardware files, DSP projects, tools, calibration tables and measurement logs."
+    "documentation": "English Markdown and historical TXT companions; Russian language navigation; full English BOM workbook and cell-by-cell annotation companion. See docs/ENGLISH-UPDATE.md.",
+    "unchanged": "All original hardware, DSP, coefficient, measurement, photograph and historical TXT bytes.",
+    "baseline_changes": [
+      "AGENTS.md",
+      "archive/README.md",
+      "docs/INVENTORY.md",
+      "docs/SETUP.md",
+      "docs/STATUS.md",
+      "docs/VERIFICATION.md",
+      "measurements/README.md",
+      "NOTICE.md",
+      "README.md",
+      "корпус/README.md",
+      "проект_сигма/README.md",
+      "схема_плата/README.md"
+    ]
   },
-  "description": "Repository package revision 4; manifest excludes itself. Original working folder remains unchanged.",
+  "description": "Bilingual documentation package revision 5; original revision 4 manifest preserved under docs/manifests.",
   "files": [
     {
       "path": ".gitattributes",
@@ -25,9 +37,15 @@
       "sha256": "143b15ec67aa482f84444b3c15111c34db842d6e331d88bf9f5d16e8995534a0"
     },
     {
+      "path": "AGENTS.en.md",
+      "bytes": 7881,
+      "sha256": "1957297fbabc340735e9f4e34afa66679615492062e704ab2bdeb1c51ccbc89d"
+    },
+    {
       "path": "AGENTS.md",
-      "bytes": 12556,
-      "sha256": "7e1536d2899ba4bc42adec51234c3dfda32dfc4d1f10c5633dfa5657239e8f2c"
+      "bytes": 12611,
+      "sha256": "bf51884d1e9ccc02c499a3b72fdae9e9d74fc91f66339962328a0a9d52fd15b1",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
     },
     {
       "path": "archive/eeprom-unverified/E2Prom.bin",
@@ -358,9 +376,20 @@
       "modified_for_package": false
     },
     {
+      "path": "archive/README.en.md",
+      "bytes": 1492,
+      "sha256": "083b6b29c418484f775f260dfc9d7b89e3294c22e767e93b4f51ec427512446c"
+    },
+    {
       "path": "archive/README.md",
-      "bytes": 2093,
-      "sha256": "0ce1b8abe3c4f687d4a7d912f4320de2c8cdd1c1f87cf80b477403c093212aab"
+      "bytes": 2148,
+      "sha256": "eae87fa8b0136e16af92a4f0fff8def7a5723a3a124b2c6de2bdc4e2f9b39409",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "archive/НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.en.md",
+      "bytes": 23755,
+      "sha256": "13518bb9c7492980b0ac6d5526b3620c40cf5e9ee3d371a9e2cbbc0505db2865"
     },
     {
       "path": "archive/НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.txt",
@@ -379,24 +408,78 @@
       "modified_for_package": false
     },
     {
+      "path": "docs/ENGLISH-UPDATE.md",
+      "bytes": 2833,
+      "sha256": "36d8c5079bdfcc2e3c1b3c41f273e65ccb4677d73216047ef43de0748f649715"
+    },
+    {
+      "path": "docs/INVENTORY.en.md",
+      "bytes": 6773,
+      "sha256": "588ffd3d896c422e97b7b084458aaf8fe01fe7aa0446323160cdcbaa84622e2a"
+    },
+    {
       "path": "docs/INVENTORY.md",
-      "bytes": 10800,
-      "sha256": "b7d0a590879fffc5fab5750203c4834f8a6eae646090005939dca16c3461fe09"
+      "bytes": 10861,
+      "sha256": "9812419cc88f1ae80415aaadd6b5acdc203bec34b0470824ca189b4fc1b2bf3e",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "docs/manifests/pre-english-2026-11-07.json",
+      "bytes": 50270,
+      "sha256": "815aa4d6a8344eee9c840a980fa7b3d3cda95a952d5d6681af4ee06a8041a02e"
+    },
+    {
+      "path": "docs/SETUP.en.md",
+      "bytes": 6351,
+      "sha256": "7f04d8ac7788b3752f15120285740ca389f8245cbfa35fc9eceda727ed065c87"
     },
     {
       "path": "docs/SETUP.md",
-      "bytes": 9962,
-      "sha256": "740999c0c3020043b3b85e988bc563afe4f282f16baf5cf1559fab9606984b95"
+      "bytes": 10015,
+      "sha256": "583579734b3129348f771e8c6983f97b3cb48929456773954ae9ccbe7a102306",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "docs/STATUS.en.md",
+      "bytes": 7063,
+      "sha256": "a4743ce9474ec0e6cc06ff94f083dd4d897ebb8951b9e6e2bc2fd1b83510367e"
     },
     {
       "path": "docs/STATUS.md",
-      "bytes": 10946,
-      "sha256": "596d52935afb99f17fcb4ceba6dc3c9158d48170b3a0b00dec71aad57c1ee8aa"
+      "bytes": 11001,
+      "sha256": "b75b58c79b362536cc7354006a574ed1d6abe2e38a0f2bd05e83bf6e39d8a3af",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "docs/TRANSLATIONS.en.md",
+      "bytes": 3015,
+      "sha256": "cc2bf11ce40ae267d133d3ca5b8ce6085860ebc7cba5dc6792d20e467504fd97"
+    },
+    {
+      "path": "docs/TRANSLATIONS.md",
+      "bytes": 5054,
+      "sha256": "772001fe5a17e25f41a2da1768dbfb378e65590fc14057cce9f5cc3af7261230"
+    },
+    {
+      "path": "docs/VERIFICATION.en.md",
+      "bytes": 2935,
+      "sha256": "495c20d59c0a1c69cafb99ec1e128f2c1351170f8373c7a30a49ce9794b4b8a4"
     },
     {
       "path": "docs/VERIFICATION.md",
-      "bytes": 4583,
-      "sha256": "b3f4f39c0c59f822b22e797bcb7a663d4fae794d6891154eb3b1ec60c209d793"
+      "bytes": 4650,
+      "sha256": "b4b90950add6d47368fa8b4563e2de25cf88df331cc3f39aa5e2696c732d7f9c",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1072,
+      "sha256": "6ab715616aef817208e30887bcd114f7aeab583b880c18b1ffe7ef797803b1e3"
+    },
+    {
+      "path": "LICENSES/CERN-OHL-P-2.0.txt",
+      "bytes": 8855,
+      "sha256": "eeecc593866fa1c3b80189c7e3dc0ceb77740557fa92f81771f891cc54c579cb"
     },
     {
       "path": "measurements/2026-10-27/calibration_final.jsonl",
@@ -535,19 +618,37 @@
       "modified_for_package": false
     },
     {
+      "path": "measurements/README.en.md",
+      "bytes": 1666,
+      "sha256": "b3cfbf31d4ea0fd7ebfdf504cfed998575f011b813985e041c8d1a9e383c70bf"
+    },
+    {
       "path": "measurements/README.md",
-      "bytes": 1602,
-      "sha256": "6f88ada146757d084a6579b84ab1b1eefce2d656c8bf86681af8617a9b6964ba"
+      "bytes": 1657,
+      "sha256": "342af97d454a09fb0b0ba49751a3fffa955e1983335eb16eb8059fb0fc6851a0",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "NOTICE.en.md",
+      "bytes": 2813,
+      "sha256": "577989d21026eec9c201020c81d18b41b059e2558891c4482d4ab9d4babe0c1a"
     },
     {
       "path": "NOTICE.md",
-      "bytes": 4706,
-      "sha256": "2f5a7c2a2a582b09d96425bbecd126f06ab2b6428b131ed24c1bf553c573dd0a"
+      "bytes": 4761,
+      "sha256": "babca51944e4a260480676d8a4523c5df24fa114eaa84bfcca531b677b0ab4de",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "README.en.md",
+      "bytes": 6257,
+      "sha256": "160cc0fc4428409d693c450b696e2c7ce0a14fc33ac72d8fbd1b66a11d962ab6"
     },
     {
       "path": "README.md",
-      "bytes": 8889,
-      "sha256": "450d2779d82d497c1c68f15b026bf58e77d90becf18fe595f4661ea611fca67a"
+      "bytes": 8944,
+      "sha256": "78cea5eeec2005a6ca2b0fba03d57522fc8c498102a8fe34e9d5908049bf8350",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
     },
     {
       "path": "tools/check_project.py",
@@ -593,6 +694,11 @@
       "source": "tools/meter/win_hid.py",
       "source_sha256": "529392a69d071a5daa36bb7d7cd69d4a8ad22356ad817d808188693815c50c8a",
       "modified_for_package": false
+    },
+    {
+      "path": "tools/meter/ИНСТРУКЦИЯ.en.md",
+      "bytes": 4079,
+      "sha256": "6bcd21d89e9ee62c197ba00479ba79b0c8a9bd2bac18477e89ceb543c9912cb6"
     },
     {
       "path": "tools/meter/ИНСТРУКЦИЯ.txt",
@@ -645,6 +751,16 @@
       "modified_for_package": true
     },
     {
+      "path": "tools/translations.mjs",
+      "bytes": 3675,
+      "sha256": "4f05ae6ee14c457e98d57c2fa1f1e4bdc4ef4a7231811d9bb324a69a3e9ba69d"
+    },
+    {
+      "path": "translations.json",
+      "bytes": 7110,
+      "sha256": "69d547ecb350a94bacbcf10482668d6eff106a941fae42b883a82974dce9b8d9"
+    },
+    {
       "path": "корпус/d.lxcf",
       "bytes": 313,
       "sha256": "d436a610bf100460bd46b023ea25a6a5c750e1fc8b16dff14b924f9848971a69",
@@ -653,9 +769,15 @@
       "modified_for_package": false
     },
     {
+      "path": "корпус/README.en.md",
+      "bytes": 1232,
+      "sha256": "a7fcfaccec6b376918c6a685be9b6b588c0bfb8eba2330f566c5e04d27d54b46"
+    },
+    {
       "path": "корпус/README.md",
-      "bytes": 1729,
-      "sha256": "3879dda467ea92522e2c5a8bc2d2895821449247b67faee18c70adcb1bcaaa80"
+      "bytes": 1784,
+      "sha256": "a9870dc17b68690511398334c79497b89bebd1e23a7e545b0b9dca069915db8e",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
     },
     {
       "path": "корпус/RUICHI A09.jpg",
@@ -882,9 +1004,15 @@
       "modified_for_package": false
     },
     {
+      "path": "проект_сигма/README.en.md",
+      "bytes": 2003,
+      "sha256": "cbc360d3bda359915263849a8d56f4a86ee9c933d0df7c83779b50189973430e"
+    },
+    {
       "path": "проект_сигма/README.md",
-      "bytes": 2193,
-      "sha256": "00f7cd40b0df65c4b0b6f726c5fbc32f03152bee25aa9bd3b67c45b59313aaec"
+      "bytes": 2248,
+      "sha256": "83dd58c5510984d3b158a3440650f1cf8889dd3f564422e82d34b0ad91574ad9",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
     },
     {
       "path": "проект_сигма/voltage_input_0_10V.txt",
@@ -903,12 +1031,22 @@
       "modified_for_package": false
     },
     {
+      "path": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.en.md",
+      "bytes": 3964,
+      "sha256": "99244966139dce6bb73f5fb95ebc1a7e9af0d8b520085e6c4d021738ce5d0c63"
+    },
+    {
       "path": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.txt",
       "bytes": 5732,
       "sha256": "60e1d97d2e64ac3a1bdfc06f09a3871822bfdd04f385f0cd87fe843ad57dd22e",
       "source": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.txt",
       "source_sha256": "60e1d97d2e64ac3a1bdfc06f09a3871822bfdd04f385f0cd87fe843ad57dd22e",
       "modified_for_package": false
+    },
+    {
+      "path": "проект_сигма/Калибровка_тока_2026-10-27.en.md",
+      "bytes": 3508,
+      "sha256": "657904a80b0d439a93480a7cf0181ed8d29637ed3b686fc51417b1fd838d9a54"
     },
     {
       "path": "проект_сигма/Калибровка_тока_2026-10-27.txt",
@@ -919,12 +1057,27 @@
       "modified_for_package": false
     },
     {
+      "path": "проект_сигма/Калибровка_тока_до_замены_R43.en.md",
+      "bytes": 2349,
+      "sha256": "77080600ec55e214290feb9c05f3e534ca540dad38147e2f2eaa28ff1c17434c"
+    },
+    {
       "path": "проект_сигма/Калибровка_тока_до_замены_R43.txt",
       "bytes": 3214,
       "sha256": "252c404fe014327f8d82df9767e0e030ac8c0bda9bfc48fcc46b785858e03804",
       "source": "проект_сигма/Калибровка_тока_до_замены_R43.txt",
       "source_sha256": "252c404fe014327f8d82df9767e0e030ac8c0bda9bfc48fcc46b785858e03804",
       "modified_for_package": false
+    },
+    {
+      "path": "схема_плата/ANNOTATIONS.en.md",
+      "bytes": 3009,
+      "sha256": "cb22e6825a42610e57ab0c725937ab94adbde3130f05cd41e8a0ef9f4aee3ea0"
+    },
+    {
+      "path": "схема_плата/BOM-labels.en.md",
+      "bytes": 21430,
+      "sha256": "f68bfc31d7db626d068b908b8b8423f77306ef1be712f40fc1a65d45fe535663"
     },
     {
       "path": "схема_плата/Proportional Valve Controller_v0/Bottom.gbr",
@@ -999,9 +1152,20 @@
       "modified_for_package": false
     },
     {
+      "path": "схема_плата/README.en.md",
+      "bytes": 2606,
+      "sha256": "18023b70575c295556ad25144e18a71e4e978b8abb7d2b014f866dc66836f798"
+    },
+    {
       "path": "схема_плата/README.md",
-      "bytes": 3491,
-      "sha256": "7e28512df7721079b5d0e4d108f8b99023d29a43391844799a36d756dbe443ce"
+      "bytes": 3546,
+      "sha256": "bd114f9dfb1a22b284f6e6649741cc58322b619114f86a121d846bef48206f28",
+      "translation_update": "Language-navigation links only; technical Russian text preserved."
+    },
+    {
+      "path": "схема_плата/Спецификация_для_пайк.en.xlsx",
+      "bytes": 23217,
+      "sha256": "f21b3211756b5b38d9d4f173bcf9d0269e0bc731f77441b2e5607afdefcefec5"
     },
     {
       "path": "схема_плата/Спецификация_для_пайк.xlsx",
@@ -1034,16 +1198,6 @@
       "source": "фото/PCB_TOP.JPG",
       "source_sha256": "5d71c668c0fc71e791c6b94faefd30c8dbdd06274b067418991017256d608050",
       "modified_for_package": false
-    },
-    {
-      "path": "LICENSE",
-      "bytes": 1072,
-      "sha256": "6ab715616aef817208e30887bcd114f7aeab583b880c18b1ffe7ef797803b1e3"
-    },
-    {
-      "path": "LICENSES/CERN-OHL-P-2.0.txt",
-      "bytes": 8855,
-      "sha256": "eeecc593866fa1c3b80189c7e3dc0ceb77740557fa92f81771f891cc54c579cb"
     },
     {
       "path": "фото/Корпус_на_машине.jpg",
