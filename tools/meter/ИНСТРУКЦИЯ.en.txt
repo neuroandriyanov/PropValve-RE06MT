@@ -1,0 +1,80 @@
+Direct UNI-T UT61D+ reading without image capture
+================================================
+
+Russian original: ИНСТРУКЦИЯ.txt
+
+Tested with a real WCH CH9329 adapter, VID:PID 1A86:E429.
+The manufacturer's UT61D+ application remained open during the test.
+Dependencies: Windows and Python 3; no additional packages or drivers are needed.
+CP2110 support follows its specification but was not tested on this computer.
+
+Commands from the project root:
+
+  .\tools\meter\meter.ps1 --list
+  .\tools\meter\meter.ps1 --count 1
+  .\tools\meter\meter.ps1 --count 5 --interval 1
+  .\tools\meter\meter.ps1 --count 0 --interval 1 --latest output/meter/latest.json --log output/meter/readings.jsonl
+
+The last command runs until Ctrl+C. No background services, startup entries
+or scheduled tasks are installed. The default is one measurement.
+read_meter.py can be invoked directly with any installed Python 3.
+
+Output is JSON: display, mode, unit, volts, amps, quantity, flags, timestamp_utc, received_unix,
+checksum_valid, calibration_usable, frame_hex. Each measurement is requested
+from the instrument. Packet length, header and checksum are checked.
+The timestamp records receipt by the computer, not ADC conversion time.
+The UT61D+ model was identified by the user and options.xml; the utility does
+not query the model name automatically, to avoid interrupting existing polling.
+
+With HOLD/REL/MIN/MAX/PEAK, low battery, overload or an unsuitable mode,
+calibration_usable=false. For DC voltage and DC current,
+calibration_usable can be true: the consumer must check quantity.
+volts is populated only for voltage modes; amps only for current modes,
+converting A/mA/uA to amperes. Units in other modes are not guessed.
+Coil calibration requires quantity=current and DCA/DCmA/DCuA mode;
+voltage calibration requires quantity=voltage and DCV/DCmV mode.
+
+Reading latest.json alone does NOT prove that the instrument is connected now:
+the last measurement remains there after the utility stops. Before calibration,
+request a new measurement and check ok=true, calibration_usable=true,
+checksum_valid=true and the age of received_unix (recommended maximum: 3 seconds).
+If the next attempt fails, latest.json is replaced with an error message.
+
+If the two applications' polling interferes, stop polling in the manufacturer
+utility. The reading utility does not terminate other processes or change the
+instrument's mode, range, HOLD, REL, EEPROM settings or USB identifiers.
+Its only multimeter command is measurement request 0x5E.
+
+Findings about the manufacturer application
+------------------------------------------
+DMM.exe is a 32-bit Qt 5 application. Settings are stored in options.xml.
+CustomDmm.dll implements the multimeter protocol layer and command queues.
+CP2110.dll and SLABHIDtoUART.dll provide the alternative Silicon Labs transport.
+CH9329DLL.dll contains CH9329ReadData/CH9329WriteData and uses Windows HID.
+The adapter actually found on this PC was CH9329, not CP2110. CP2110 DLLs
+in the application folder do not establish that a CP2110 adapter is connected.
+
+CH9329 uses a 65-byte Windows HID report:
+  [00] [UART length] [UART data] [padding to 65 bytes]
+UART measurement request:
+  AB CD 03 5E 01 D9
+UART measurement response:
+  AB CD 10 [14 data bytes] [checksum, most-significant byte first]
+The checksum is the sum of all UART-frame bytes except the last two, modulo 65536.
+HID padding beyond the declared length may contain arbitrary bytes;
+it must be ignored.
+
+Captured real response (6.25 V DC):
+  AB CD 10 02 31 20 20 20 36 2E 32 35 00 03 30 30 30 03 79
+
+PE-file import/string analysis and on-device protocol verification were sufficient.
+IDA, COM interception and modification of manufacturer files were unnecessary.
+The inspect_vendor.py inspector does not execute the DLLs being examined.
+
+Compatibility references:
+  https://github.com/ljakob/unit_ut61eplus
+  https://github.com/mbraune/ut161b
+  https://github.com/antoinecellerier/dmm-tools
+
+Tests:
+  python -m unittest discover -s tools/meter -p test_*.py -v

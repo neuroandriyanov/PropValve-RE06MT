@@ -1,0 +1,68 @@
+Current and feedback calibration — 27.10.2026
+
+Russian original: Калибровка_тока_2026-10-27.txt
+
+The user replaced R43: 180 Ω -> 10 kΩ.
+Working project: Design1_parker_v0.dspproj.
+Reference copy: Design1_parker_current_calibrated.dspproj.
+Fs=96 kHz. The project was downloaded to RAM. EEPROM was not written.
+
+CURRENT_INPUT_0_1 is the 0..1 command input, format 5.23.
+CURRENT_0_3A is the current-command table, input range 0..1.
+ZERO_OFF: when the command is <=0, both DAC0/DAC1 digital commands are zero.
+For a positive command, DAC0=table(x), DAC1=-table(x).
+ZERO_CONSTANT must remain zero.
+
+Measurement:
+ADC1 -> CURRENT_LPF_20Hz -> FB_LIMIT_MIN -> FB_LIMIT_MAX -> I_FEEDBACK_0_1 -> I_MEAS_0_1.
+CURRENT_LPF_20Hz is a first-order low-pass filter, 20 Hz, gain 0 dB.
+I_FEEDBACK_0_1 is a 5-point interpolator: Min=-0.78, Max=0.70.
+FB_LIMIT_MIN/MAX explicitly clamp the interpolator input to -0.78..0.70.
+Constants FB_MIN_CONST=-0.78, FB_MAX_CONST=0.70 must match Min/Max.
+I_MEAS_0_1 is normalized measured current; amperes = value * 3.
+ADC1_RAW is the diagnostic unfiltered ADC1 signal.
+No digital regulation loop using I_MEAS_0_1 was closed;
+the TL494 analog current controller continues to control the power stage.
+
+Command coefficients:
+0.00 -> 0.023218750000
+0.25 -> 0.159650674870
+0.50 -> 0.290056819700
+0.75 -> 0.418537411283
+1.00 -> 0.546914277550
+
+Measurement coefficients at uniformly spaced nodes from -0.78 to +0.70:
+-0.780 -> 0.000000000000
+-0.410 -> 0.245772526859
+-0.040 -> 0.493489060467
+0.330 -> 0.742258512976
+0.700 -> 1.000000000000
+
+Independent multimeter verification:
+Input 0.000, target 0.000 A, multimeter 0.0000 A, DSP 0.000940 = 0.0028 A
+Input 0.125, target 0.375 A, multimeter 0.3675 A, DSP 0.123211 = 0.3696 A
+Input 0.250, target 0.750 A, multimeter 0.7475 A, DSP 0.249255 = 0.7478 A
+Input 0.500, target 1.500 A, multimeter 1.4995 A, DSP 0.499490 = 1.4985 A
+Input 0.750, target 2.250 A, multimeter 2.2510 A, DSP 0.750680 = 2.2520 A
+Input 1.000, target 3.000 A, multimeter 2.9980 A, DSP 0.999998 = 3.0000 A
+Input 0.000, target 0.000 A, multimeter 0.0000 A, DSP 0.000000 = 0.0000 A
+
+After R43 replacement, no ADC1 saturation was found over 0..3 A:
+at ~3 A the unfiltered signal was approximately +0.658 to +0.754.
+Filtering reduces reading scatter but does not eliminate zero drift.
+In one calibration series the zero level changed by about
+0.013 ADC units, equivalent to ~26 mA.
+A fixed table does not compensate zero changes between series.
+This verification describes the board during those measurements;
+it does not guarantee thermal accuracy after cooling or warming.
+The interpolator itself does not clamp correctly outside Min/Max:
+before FB_LIMIT_MIN/MAX were added, this caused erroneous readings at the ends.
+Separate blocks before the interpolator now perform clamping.
+CURRENT_INPUT_0_1 must be supplied within the stated 0..1 range.
+
+Full records: output/meter/feedback_*.json.
+current_command_0_3A.txt and current_feedback_0_3A.txt contain only
+coefficients. Min/Max ranges are saved in the project and JSON.
+The DAC3 0..10 V voltage calibration was checked: coefficients were unchanged.
+The command was set to zero at the end.
+Do not rerun one-off install_*.py and refine_feedback.py scripts.

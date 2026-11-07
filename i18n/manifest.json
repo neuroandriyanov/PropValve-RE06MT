@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "sourceLanguage": "ru",
+  "targetLanguage": "en",
+  "entries": [
+    {
+      "source": "AGENTS.md",
+      "target": "AGENTS.en.md",
+      "sourceSha256": "86155786a59283f95daf63e9ff1aa614b74b0dfeb553f85f42d597c9aa5a05c3",
+      "targetSha256": "1fdba9dc1a08d9e2516ffb5d31b3365f9df9729bc969803bec475c1e271f57ee",
+      "status": "reviewed"
+    },
+    {
+      "source": "NOTICE.md",
+      "target": "NOTICE.en.md",
+      "sourceSha256": "b29233528a07113c28cc338667812214a34672aaf455066eaf58083f5b014cbb",
+      "targetSha256": "cd011fc70dc44399a8fed72403617c72b7cadc4d6943e921271c5c29a9b981d0",
+      "status": "reviewed"
+    },
+    {
+      "source": "README.md",
+      "target": "README.en.md",
+      "sourceSha256": "cf17f451fdecaede45108afa770119484d034382c7cb1f321cc98d102d388d8c",
+      "targetSha256": "c3c17e6efda018f34ba5b16661192491f30ea889547637810ff0b336195cab21",
+      "status": "reviewed"
+    },
+    {
+      "source": "archive/README.md",
+      "target": "archive/README.en.md",
+      "sourceSha256": "76e67663a28b0331cbb0143b1ce6e5be2b9e193e68200b4446568af9d710d885",
+      "targetSha256": "d96676d7466e86101e8239fa733b4021697dac886e38e2f5cc7c55d7f423ae2d",
+      "status": "reviewed"
+    },
+    {
+      "source": "archive/legacy-tools/meter/ИНСТРУКЦИЯ.txt",
+      "target": "archive/legacy-tools/meter/ИНСТРУКЦИЯ.en.txt",
+      "sourceSha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "targetSha256": "ffcb8ad6aaa3e7ca7a90d6137f32460483340f2b0fc079a756b2a2d4f5616069",
+      "status": "reviewed"
+    },
+    {
+      "source": "archive/НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.txt",
+      "target": "archive/НАЧАТЬ_ЗДЕСЬ_ПЕРЕНОС_ПРОЕКТА.en.txt",
+      "sourceSha256": "343f8a6559e3bd4985a33ef7007dd29961ae477596602f2194bb498cdbcbf1de",
+      "targetSha256": "d9e03109a7bea6703148557d52323e9c0aa4e6c9d720b22043a0edf43bbbd97f",
+      "status": "reviewed"
+    },
+    {
+      "source": "docs/INVENTORY.md",
+      "target": "docs/INVENTORY.en.md",
+      "sourceSha256": "427ccd7c889225a88143ca03f55a5faf13317f269ae6bc49e325d47388355d43",
+      "targetSha256": "8c658838043d60910e73d45a33322dd314b549abed3c5db24c6eb89c77102c73",
+      "status": "reviewed"
+    },
+    {
+      "source": "docs/SETUP.md",
+      "target": "docs/SETUP.en.md",
+      "sourceSha256": "f041e20ea17b1909046d4f6f5c9f1262aae2fbb81070632ea4f5a3b52735831d",
+      "targetSha256": "bc0ab16716cb64bf502a16cf793066aeb3f8d9c3e92e8afc25f1874341f91ca3",
+      "status": "reviewed"
+    },
+    {
+      "source": "docs/STATUS.md",
+      "target": "docs/STATUS.en.md",
+      "sourceSha256": "0ed3f44b86a4c3d4b020a4b216fcfd2d8ad70fa59e94467807e4d123b82bb455",
+      "targetSha256": "6512c3b6077cc13fcd0462ae6b126b91641c814f578d0dd349dcc176e062be54",
+      "status": "reviewed"
+    },
+    {
+      "source": "docs/TRANSLATION.md",
+      "target": "docs/TRANSLATION.en.md",
+      "sourceSha256": "2c1c52456d67222fad2bd1b7c3e468cf353799fcee814029dcc30ef0a8056e06",
+      "targetSha256": "acafed3549b6c746cf50d9ebdd2533225e1388d7252b0fad2663cb7429f2a412",
+      "status": "reviewed"
+    },
+    {
+      "source": "docs/VERIFICATION.md",
+      "target": "docs/VERIFICATION.en.md",
+      "sourceSha256": "c000dc5e4b2f10997e7183f1eb5d1ff51f6939eb0f032de58533f09cb495e6a6",
+      "targetSha256": "08e36ca37954373fac9279ba6e763545baef23636bebe199e6ff519b067a4b33",
+      "status": "reviewed"
+    },
+    {
+      "source": "measurements/README.md",
+      "target": "measurements/README.en.md",
+      "sourceSha256": "c17101e84153080fb3a87e42e78061f0f6eab7b1d44b0cd63fa9b77e877006d1",
+      "targetSha256": "377780bb2d3503ef20545f4cd4fe7e47cb18057a58d69127991508e4011812d0",
+      "status": "reviewed"
+    },
+    {
+      "source": "tools/meter/ИНСТРУКЦИЯ.txt",
+      "target": "tools/meter/ИНСТРУКЦИЯ.en.txt",
+      "sourceSha256": "1296e9e607e99cf132926a816f55e25e57bb327fa6c6251cb6c356a31fedacd8",
+      "targetSha256": "ffcb8ad6aaa3e7ca7a90d6137f32460483340f2b0fc079a756b2a2d4f5616069",
+      "status": "reviewed"
+    },
+    {
+      "source": "корпус/README.md",
+      "target": "корпус/README.en.md",
+      "sourceSha256": "a0dcdbad7fa7b8a6785b25fdc4c3d0ac812f2e56343e52dcc7d7d5a241a1d447",
+      "targetSha256": "37cb843a935b93d35157bafa7340df20bff83d3d063ee095b19adcd23f1b158d",
+      "status": "reviewed"
+    },
+    {
+      "source": "проект_сигма/README.md",
+      "target": "проект_сигма/README.en.md",
+      "sourceSha256": "7205833f518f28be8d05b9508231acc2f453895a8420e01578dff55f73709779",
+      "targetSha256": "c6634208bf40b5baa5282934222585a2099258e9d2522e3056b7f6e0520d4043",
+      "status": "reviewed"
+    },
+    {
+      "source": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.txt",
+      "target": "проект_сигма/Калибровка_входа_0_10В_2026-10-27.en.txt",
+      "sourceSha256": "60e1d97d2e64ac3a1bdfc06f09a3871822bfdd04f385f0cd87fe843ad57dd22e",
+      "targetSha256": "121214900648d646b838c1e11ebb96e5bef6403e42820a902437084b92623a32",
+      "status": "reviewed"
+    },
+    {
+      "source": "проект_сигма/Калибровка_тока_2026-10-27.txt",
+      "target": "проект_сигма/Калибровка_тока_2026-10-27.en.txt",
+      "sourceSha256": "555a891756cd4d40b65decd445c25b38ff61fe40267032cdb9ad5add694b5d53",
+      "targetSha256": "0d2b34d1c721bc3e672d6241d8a4e6966c9a7b25ef96ab74b0ea55e4c4e9cd6d",
+      "status": "reviewed"
+    },
+    {
+      "source": "проект_сигма/Калибровка_тока_до_замены_R43.txt",
+      "target": "проект_сигма/Калибровка_тока_до_замены_R43.en.txt",
+      "sourceSha256": "252c404fe014327f8d82df9767e0e030ac8c0bda9bfc48fcc46b785858e03804",
+      "targetSha256": "1709ef18c7cf2a03875e3fc611ab31a4d1bd0277c6d26fa5ad502f6f87d6ebe0",
+      "status": "reviewed"
+    },
+    {
+      "source": "схема_плата/README.md",
+      "target": "схема_плата/README.en.md",
+      "sourceSha256": "b6a0b196f8ccd4bd170fb60ffb4c96a6770cae0793bd4355f671530d8f340ec3",
+      "targetSha256": "d74105141d394bef2976346a14eb97777862dfb92f669ed1493eee96f5743143",
+      "status": "reviewed"
+    },
+    {
+      "source": "схема_плата/schematic-notes.md",
+      "target": "схема_плата/schematic-notes.en.md",
+      "sourceSha256": "ce525c758ca4d1abae55010ac9ea5558c70a9ab3e5d2693f28787e461290720e",
+      "targetSha256": "6d125b14131ae8f318a3bff3563c87e57a8c76b9747e5f2913375ce5f5d14ef0",
+      "status": "reviewed"
+    },
+    {
+      "source": "схема_плата/схема.pdf",
+      "target": "схема_плата/schematic.en.pdf",
+      "sourceSha256": "8aa962325f2592fd91f79010b7ca1ed88a3f631f3d9b930e92d959d2ef851263",
+      "targetSha256": "3ea6528136f97d3ec211a9aa38002804b9d20a31d9a144b6672b2998a1d8bf5b",
+      "status": "reviewed"
+    },
+    {
+      "source": "схема_плата/Спецификация_для_пайк.xlsx",
+      "target": "схема_плата/Спецификация_для_пайк.en.xlsx",
+      "sourceSha256": "fd7d7ce15a02bc9ff0ae32e6ad3d1971385cc432c43b1d2ab8f9043551ba51b0",
+      "targetSha256": "f24ce433429ebd7a9d88472d3857e63bcdaa160b784ce5f444f11320c02e3eaa",
+      "status": "reviewed"
+    }
+  ],
+  "shared": [
+    {
+      "path": "LICENSES/CERN-OHL-P-2.0.txt",
+      "reason": "Canonical third-party license text; preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/IC 1_Design1_parker_v0/net_list_out2/compiler_output.txt",
+      "reason": "Compiler output; machine-generated technical data, preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/current_command_0_3A.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/current_feedback_0_3A.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/linintdacout.before_calibration.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/linintdacout.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/linintdacout_calibrated.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    },
+    {
+      "path": "проект_сигма/voltage_input_0_10V.txt",
+      "reason": "Numerical coefficient table; values are shared across languages and preserved unchanged."
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "Measurements and calibration settings",
+      "paths": [
+        "measurements/2026-10-27/",
+        "проект_сигма/*.json"
+      ],
+      "reason": "Immutable original numerical records and calibration settings; full explanatory reports are translated separately."
+    },
+    {
+      "category": "Design and manufacturing data",
+      "paths": [
+        "проект_сигма/*.dspproj",
+        "проект_сигма/IC 1_Design1_parker_v0/",
+        "схема_плата/Proportional Valve Controller_v0/",
+        "корпус/*.m3d",
+        "корпус/*.stl",
+        "корпус/*.lxcf",
+        "archive/eeprom/"
+      ],
+      "reason": "Machine-readable DSP, compiler, PCB, enclosure and EEPROM data; changing strings or bytes could change behavior or reproducibility."
+    },
+    {
+      "category": "Original visual evidence",
+      "paths": [
+        "фото/",
+        "корпус/RUICHI A09.jpg"
+      ],
+      "reason": "Original photographs remain shared and unchanged; captions and descriptions are localized in Markdown."
+    },
+    {
+      "category": "Vendor documentation and licenses",
+      "paths": [
+        "doc/Parker-Series-RE06MT.pdf",
+        "LICENSE",
+        "LICENSES/"
+      ],
+      "reason": "Third-party documentation and canonical license text are preserved in their original language."
+    },
+    {
+      "category": "Code and technical identifiers",
+      "paths": [
+        "tools/",
+        "archive/legacy-tools/"
+      ],
+      "reason": "Existing source code, commands, APIs and identifiers remain unchanged; authored instruction TXT files are included in translation entries."
+    },
+    {
+      "category": "Historical package manifest",
+      "paths": [
+        "docs/manifest.json"
+      ],
+      "reason": "Preserved as evidence of the previous package. Translation tracking uses this separate manifest."
+    }
+  ]
+}

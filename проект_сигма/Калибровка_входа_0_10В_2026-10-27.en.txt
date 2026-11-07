@@ -1,0 +1,69 @@
+0–10 V input calibration, ADC0 — 27.10.2026
+
+Russian original: Калибровка_входа_0_10В_2026-10-27.txt
+
+The user installed an X3–X4 jumper and replaced R42 with 10 kΩ.
+Calibration used the connected multimeter in DC V mode.
+Source: the previously calibrated X3 output; measurements were taken directly
+at connected X3/X4. 11 points were checked, including intermediate points and a return to zero.
+
+Working project: Design1_parker_v0.dspproj.
+Full reference copy: Design1_parker_io_calibrated.dspproj.
+The project was downloaded to RAM; EEPROM was not written.
+
+Input path:
+Input1, ADC0 -> VIN_LPF_20Hz -> VIN_TABLE_0_10V -> VIN_LIMIT_MIN -> VIN_LIMIT_MAX -> VIN_MEAS_0_1.
+Low-pass filter: first order, 20 Hz, gain 0 dB. At Fs=96 kHz the time constant
+is about 8 ms; settling to within 1% after a step takes about 37 ms.
+VIN_MEAS_0_1 is the normalized input: voltage in volts = reading * 10.
+ADC0_RAW is unfiltered ADC0; VIN_FILTERED is filtered ADC0 before normalization.
+The coil command was zero throughout calibration.
+VIN_MEAS_0_1 was not connected to the current command.
+
+Table Min = -1, Max = +1. This is the ADC0 data range, not X4 voltage.
+Across the 0..10 V operating range, ADC0 varied approximately -0.02050..+0.74948.
+No saturation was found. The full table range was retained for headroom;
+its output is independently clamped to 0..1 by two conditional blocks.
+VIN_ZERO=0, VIN_ONE=1; VIN_LIMIT_MIN condition: >; VIN_LIMIT_MAX condition: <.
+Negative and above-1 coefficients at the table's outer nodes are valid
+extrapolations. The final signal is clamped to 0..1.
+
+Coefficients at ADC0 nodes = -1; -0.5; 0; +0.5; +1:
+-1.00 -> -1.279143881855
+-0.50 -> -0.626184519830
+0.00 -> 0.026774842194
+0.50 -> 0.676254106065
+1.00 -> 1.325107241990
+
+Latest independent verification:
+Multimeter 0.0000 V -> DSP 0.00000536, equivalent 0.00005 V, difference +0.054 mV
+Multimeter 1.0000 V -> DSP 0.10006195, equivalent 1.00062 V, difference +0.620 mV
+Multimeter 1.2490 V -> DSP 0.12503260, equivalent 1.25033 V, difference +1.326 mV
+Multimeter 2.5000 V -> DSP 0.24994069, equivalent 2.49941 V, difference -0.593 mV
+Multimeter 3.7500 V -> DSP 0.37491131, equivalent 3.74911 V, difference -0.887 mV
+Multimeter 4.9990 V -> DSP 0.49981421, equivalent 4.99814 V, difference -0.858 mV
+Multimeter 6.2500 V -> DSP 0.62501651, equivalent 6.25017 V, difference +0.165 mV
+Multimeter 7.5000 V -> DSP 0.75012231, equivalent 7.50122 V, difference +1.223 mV
+Multimeter 8.7500 V -> DSP 0.87510180, equivalent 8.75102 V, difference +1.018 mV
+Multimeter 10.0000 V -> DSP 0.99988711, equivalent 9.99887 V, difference -1.129 mV
+Multimeter 0.0000 V -> DSP 0.00000954, equivalent 0.00010 V, difference +0.095 mV
+Maximum observed difference relative to the multimeter reading: 1.326 mV.
+This is the difference between readings in this series, not an estimate
+of the whole system's absolute error: it also depends on meter accuracy and resolution.
+
+The preceding 0..10 V output, 0..3 A command and current-measurement tables
+were compared to the backup made before this work: coefficients and ranges were unchanged.
+The voltage output and current command were returned to zero at the end.
+
+Files:
+voltage_input_0_10V.txt — coefficients for loading the table.
+voltage_input_settings.json — range, filter, clamps and other settings.
+output/meter/voltage_input_raw.json — initial ADC0 check.
+output/meter/voltage_input_filtered.json — calibration points after low-pass filtering.
+output/meter/voltage_input_verify.json — independent normalized-input verification.
+
+Before future batch DSP reads, disable continuous indicators
+(Action -> Disable All Continuous ReadBack Controls, Ctrl+F12).
+After API compilation, bind new indicators using the standard
+Action -> Link Compile Download (F7), then Ctrl+F11.
+Do not rerun the one-off build/connect/fit_voltage_input.py scripts.

@@ -1,0 +1,49 @@
+Current calibration, 27.10.2026 — preliminary
+
+Russian original: Калибровка_тока_до_замены_R43.txt
+
+Working project: Design1_parker_v0.dspproj
+Copy: Design1_parker_current_preliminary.dspproj
+DSP sample rate: 96 kHz. Downloaded to RAM; EEPROM was not written.
+
+CURRENT_INPUT_0_1: 0..1 command input, format 5.23.
+CURRENT_0_3A: linear interpolator, Min=0, Max=1, 5 points.
+ZERO_OFF: with input <=0, both DAC0/DAC1 digital commands are zero.
+With input >0: DAC0=table(x), DAC1=-table(x).
+ZERO_CONSTANT must remain 0.
+
+Command table:
+0.00 -> 0.023218750
+0.25 -> 0.158172414
+0.50 -> 0.288172414
+0.75 -> 0.416568966
+1.00 -> 0.545202586
+
+Latest independent multimeter verification:
+x=0.000: command 0.000 A, measured 0.000 A, ADC1=-1.000000
+x=0.100: command 0.300 A, measured 0.287 A, ADC1=-1.000000
+x=0.250: command 0.750 A, measured 0.736 A, ADC1=-1.000000
+x=0.500: command 1.500 A, measured 1.482 A, ADC1=0.025122
+x=0.625: command 1.875 A, measured 1.854 A, ADC1=0.812061
+x=0.750: command 2.250 A, measured 2.236 A, ADC1=0.999998
+x=1.000: command 3.000 A, measured 2.979 A, ADC1=0.999998
+x=0.000: command 0.000 A, measured 0.000 A, ADC1=-1.000000
+Maximum deviation: 0.021 A.
+
+Slow current drift during warm-up was found. A static table does not remove it.
+The command was set to 0 at the end; the multimeter read 0.000 A.
+
+FEEDBACK IS NOT CALIBRATED:
+ADC1 reads -1 at zero current and +0.999998 at the upper currents.
+R43=180 Ω. A table cannot recover information lost to saturation.
+ADC1_RAW_PENDING_R43 currently performs an identity mapping over -1..1,
+and FB_NOT_CALIBRATED displays raw ADC1, NOT normalized current.
+
+Next hardware step: with power off, replace R43 with 10 kΩ.
+Then remeasure the ADC1 range, check for absence of saturation and
+calibrate its interpolator: 0 A -> 0, 3 A -> 1.
+Check ripple; average-current readings will require averaging.
+
+The DAC3 0..10 V voltage calibration was preserved without changing coefficients.
+Measurement records are in output/meter/current_*.json.
+tools/sigma/install_*.py are one-off construction scripts; do not rerun them.
